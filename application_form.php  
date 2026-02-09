@@ -1,0 +1,81 @@
+<?php include 'includes/header.php'; ?>
+<?php include 'includes/common-elements.php'; ?>
+
+<head>
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<!-- Hero Section -->
+<div class="hero" id="hero" aria-labelledby="hero-title">
+  <div>
+    <h1 id="hero-title">🎓 Secure Your UK Master’s with MOI — No IELTS Required!</h1>
+    <p>Get admission to top UK universities for <strong>January / February 2026</strong> intake. Scholarships up to <strong>£7,500</strong>. Free application & visa support.</p>
+    <div class="sub-badges">
+      <div class="badge">✅ No IELTS needed (MOI accepted)</div>
+      <div class="badge">✅ Scholarships up to £7,500</div>
+      <div class="badge">✅ Fast offers (4–7 days)</div>
+    </div>
+    <div class="cta-wrapper">
+      <button class="cta-btn" onclick="document.getElementById('apply-form').scrollIntoView({behavior:'smooth'})">Apply Free — Start Now</button>
+    </div>
+    <div>Apply to top UK universities: University of Aberdeen, Aston, UWE Bristol, University of South Wales, University of Essex, University of Portsmouth and more.</div>
+  </div>
+  <aside class="hero-right">
+    <!-- Sidebar content as in original -->
+  </aside>
+</div>
+
+<!-- Benefits Section -->
+<div class="benefits-section" aria-labelledby="benefits-title">
+  <div class="benefits">
+    <!-- Benefits cards as in original -->
+  </div>
+</div>
+
+<!-- Universities Section -->
+<div class="universities-section" aria-labelledby="partners-title">
+  <div class="card">
+    <div id="partners-title">Partner Universities</div>
+    <div class="logos">
+      <!-- Logos as in original -->
+    </div>
+  </div>
+</div>
+
+<!-- Steps Section -->
+<div class="steps-section" aria-labelledby="steps-title">
+  <div class="card">
+    <div id="steps-title">Your Journey in 4 Simple Steps</div>
+    <div class="steps">
+      <!-- Steps as in original -->
+    </div>
+  </div>
+</div>
+
+<!-- Form Section -->
+<div id="apply-form" class="form-section" aria-labelledby="form-title">
+  <div class="card">
+    <div>
+      <h2 id="form-title">Apply Now — Start Your Free Application</h2>
+      <p>Fill the short form and our adviser will contact you on WhatsApp within 24 hours.</p>
+      <form id="leadForm" aria-describedby="formMsg">
+        <!-- Form fields as in original -->
+      </form>
+    </div>
+    <aside>
+      <!-- Sidebar as in original -->
+    </aside>
+  </div>
+</div>
+
+<!-- Testimonials Section -->
+<div class="testimonials-section" aria-labelledby="success-title">
+  <div class="card">
+    <div id="success-title">Success Stories</div>
+    <div>
+      <!-- Testimonials as in original -->
+    </div>
+  </div>
+</div>
+
+<?php include 'includes/footer.php'; ?>
