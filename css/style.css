@@ -19,11 +19,12 @@ body {
   background: var(--bg);
   color: var(--primary);
   line-height: 1.45;
+  font-size: 14px; /* Small font for mobile (mobile-first) */
 }
 .container {
   max-width: var(--maxWidth);
   margin: 0 auto;
-  padding: 24px;
+  padding: 16px; /* Smaller padding for mobile */
 }
 
 /* Header */
@@ -97,7 +98,7 @@ nav ul li a:hover {
   border-radius: 16px;
   padding: 28px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* Single column on mobile (mobile-first) */
   gap: 24px;
   align-items: center;
   animation: fadeIn 1s ease-in;
@@ -208,23 +209,54 @@ footer {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
-
-/* Responsive */
-@media (max-width: 980px) {
-  .hero { grid-template-columns: 1fr; }
-  .benefits { grid-template-columns: 1fr; }
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
 }
-@media (max-width: 768px) {
-  .container { padding: 16px; }
-  .logo img { height: 36px; }
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive (Mobile-First with Breakpoints) */
+@media (min-width: 768px) {
+  body {
+    font-size: 16px; /* Larger font on tablet/desktop */
+  }
+  .container {
+    padding: 24px;
+  }
+  .hero {
+    grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+  }
+  .about-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .container { max-width: 1200px; } /* Larger desktop */
 }
 @media (max-width: 480px) {
   .cta-btn { padding: 8px 12px; }
   .form-cta { flex-direction: column; }
+  h1 { font-size: 24px; } /* Smaller headings on small mobile */
+}
+@media (max-width: 768px) {
+  .logo img { height: 36px; }
+  .container { padding: 16px; }
+}
+@media (max-width: 980px) {
+  .hero { grid-template-columns: 1fr; }
+  .benefits { grid-template-columns: 1fr; }
 }
 
-/* Additional Styles for Specific Pages (Extend as Needed) */
-.about-section { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; animation: slideUp 0.8s ease-in; }
+/* Additional Styles for Specific Pages */
+.about-section { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; animation: slideUp 0.8s ease-in; } /* Mobile-first: 1fr */
 @media (prefers-reduced-motion: reduce) { .about-section { animation: none; } }
 .about-image img { max-width: 100%; border-radius: var(--radius); loading: lazy; transition: transform 0.3s; }
 .about-image img:hover { transform: scale(1.02); }
@@ -240,35 +272,6 @@ footer {
 .testimonial-grid { display: grid; gap: 16px; }
 .testimonial { animation: fadeIn 1.2s ease-in; }
 @media (prefers-reduced-motion: reduce) { .testimonial { animation: none; } }
-/* Base styles for mobile-first (small screens) */
-body {
-  font-size: 14px; /* Small font for mobile */
-}
-.container {
-  padding: 16px; /* Smaller padding for mobile */
-}
-.hero {
-  grid-template-columns: 1fr; /* Single column on mobile */
-}
-.about-section {
-  grid-template-columns: 1fr; /* Stack on mobile */
-}
-
-/* Media query for larger screens */
-@media (min-width: 768px) {
-  body {
-    font-size: 16px; /* Larger font */
-  }
-  .container {
-    padding: 24px;
-  }
-  .hero {
-    grid-template-columns: 1fr 1fr; /* Two columns on desktop */
-  }
-  .about-section {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 .benefits, .blog-grid, .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible grid */
@@ -282,26 +285,6 @@ body {
 .field {
   flex: 1; /* Flexible form fields */
   min-width: 200px;
-}
-/* Mobile (0-480px) - Base already set */
-@media (max-width: 480px) {
-  .cta-btn { padding: 8px 12px; }
-  .form-cta { flex-direction: column; }
-  h1 { font-size: 24px; } /* Smaller headings */
-}
-
-@media (max-width: 768px) {
-  .container { padding: 16px; }
-  .logo img { height: 36px; }
-}
-
-@media (max-width: 980px) {
-  .hero { grid-template-columns: 1fr; }
-  .benefits { grid-template-columns: 1fr; }
-}
-
-@media (min-width: 1200px) {
-  .container { max-width: 1200px; } /* Larger desktop */
 }
 h1 { font-size: clamp(24px, 5vw + 1rem, 48px); } /* Fluid headings */
 p { font-size: clamp(14px, 2vw + 0.5rem, 18px); }
