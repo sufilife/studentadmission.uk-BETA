@@ -73,5 +73,12 @@
     });
   });
   document.querySelectorAll('.card, .hero').forEach(el => observer.observe(el));
+
+  if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/js/service-worker.js')
+    .then(reg => console.log('Service Worker registered', reg))
+    .catch(err => console.error('Service Worker registration failed', err));
+}
   
 })(jQuery);
+
