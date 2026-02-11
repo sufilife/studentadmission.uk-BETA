@@ -1,6 +1,8 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/common-elements.php'; ?>
-
+```html
+<link rel="manifest" href="/manifest.json">
+```
 <!-- About Section -->
 <div class="about-section card" aria-labelledby="about-title">
   <div class="about-text">
