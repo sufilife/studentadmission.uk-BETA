@@ -4,6 +4,9 @@
 
 <head>
   <link href="/css/style.css" rel="stylesheet">
+  ```html
+<link rel="manifest" href="/manifest.json">
+```
 </head>
 
 <!-- Hero Section -->
