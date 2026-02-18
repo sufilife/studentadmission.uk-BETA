@@ -1,31 +1,43 @@
 <!-- Header Start -->
-<div class="container-fluid p-0">
-  <nav class="navbar navbar-expand-lg navbar-dark px-lg-5">
-    <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-      <h2 class="mb-0 text-primary text-uppercase">STUDENT ADMISSION LONDON</h2>
-    </a>
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav mx-auto p-4 p-lg-0">
-        <a href="index.html" class="nav-item nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'index.php') echo 'active'; ?>">Home</a>
-        <a href="about.html" class="nav-item nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'about.php') echo 'active'; ?>">About</a>
-        <a href="service.html" class="nav-item nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'service.php') echo 'active'; ?>">Services</a>
-        <div class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-          <div class="dropdown-menu m-0">
-            <a href="team.html" class="dropdown-item">Blogs</a>
-            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-            <a href="404.html" class="dropdown-item">404 Page</a>
+<!-- Favicon -->
+    <link rel="icon" type="image/webp" href="https://studentadmission.uk/img/logo.webp">
+        <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+<header>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="logo">
+          <img src="https://studentadmission.uk/img/logo.webp" alt="STUDENT ADMISSION LONDON">
+          <div>
+            <div style="font-weight:700">STUDENT ADMISSION LONDON</div>
+            <div style="font-size:12px;color:var(--muted)">British Council Certified Consultant</div>
           </div>
         </div>
-        <a href="contact.html" class="nav-item nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'contact.php') echo 'active'; ?>">Contact</a>
+        <nav>
+          <div class="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <ul id="navMenu">
+            <li><a href="https://studentadmission.uk/">Home</a></li>
+            <li><a href="https://studentadmission.uk/about.php">About</a></li>
+            <li><a href="https://studentadmission.uk/service.php">Services</a></li>
+            <li><a href="#pages">Pages</a></li>
+            <li><a href="https://studentadmission.uk/blogs.php">Blogs</a></li>
+            <li><a href="https://studentadmission.uk/testimonial.php">Testimonial</a></li>
+            <li><a href="https://studentadmission.uk/contact.php">Contact</a></li>
+          </ul>
+        </nav>
+        <div style="display:flex;gap:12px;">
+          <div style="font-size:14px;color:var(--muted)">WhatsApp: +447446969466</div>
+          <a href="tel:+447446969466" class="secondary">Call</a>
+        </div>
+        <div class="d-none d-lg-flex">
+                    <a class="btn btn-outline-primary border-2" href="https://studentadmission.uk/application_form.php">Free Apply Now</a>
+                </div>
       </div>
-      <div class="d-none d-lg-flex">
-        <a class="btn btn-outline-primary border-2" href="https://studentadmission.uk/application_form.html">Free Apply Now</a>
-      </div>
-    </div>
-  </nav>
-</div>
+    </header>
 <!-- Header End -->
