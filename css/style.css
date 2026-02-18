@@ -42,6 +42,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -54,7 +55,7 @@ header {
 }
 nav ul {
   display: flex;
-  gap: 20px;
+  gap: 27px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -74,7 +75,7 @@ nav ul li a:hover {
   cursor: pointer;
 }
 .bar {
-  width: 25px;
+  width: 27px;
   height: 3px;
   background: var(--primary);
   margin: 5px 0;
@@ -82,7 +83,7 @@ nav ul li a:hover {
 }
 .contact-info {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
   animation: slideUp 0.5s ease-in 0.2s;
 }
@@ -94,7 +95,7 @@ nav ul li a:hover {
 /* Hero/Carousel */
 .hero {
   background: linear-gradient(90deg, rgba(217,228,245,0.06), rgba(217,228,245,0.02));
-  border-radius: 16px;
+  border-radius: 10px;
   padding: 28px;
   display: grid;
   grid-template-columns: 1fr;
@@ -115,6 +116,63 @@ nav ul li a:hover {
   margin: 12px 0 18px;
   color: var(--muted);
   animation: slideUp 0.8s ease-in 0.2s;
+}
+
+/* Hero & Full Wide Carousel */
+.hero-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.full-screen-img {
+  width: 100vw;
+  height: 70vh;
+  object-fit: cover;
+  animation: zoomEffect 10s infinite alternate;
+}
+
+@keyframes zoomEffect {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+/* Smooth Slide Transition */
+.carousel-item {
+  transition: transform 1.2s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+/* Welcome Section Styling */
+.welcome-section {
+  padding: 40px 20px;
+}
+
+.side-lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.side-lines::before, .side-lines::after {
+  content: "";
+  height: 2px;
+  width: 80px;
+  background-color: var(--primary);
+}
+
+.main-title {
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin: 15px 0;
+}
+
+.highlight-text {
+  background: var(--primary);
+  color: white;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 5px;
 }
 
 /* CTA Button */
@@ -240,3 +298,86 @@ footer {
 .testimonial-grid { display: grid; gap: 16px; }
 .testimonial { animation: fadeIn 1.2s ease-in; }
 @media (prefers-reduced-motion: reduce) { .testimonial { animation: none; } }
+/* স্লাইডার ইমেজ ফুল স্ক্রিন হাইট করার জন্য */
+.full-screen-img {
+    height: 70vh; /* স্ক্রিনের ৭০% হাইট নিবে, আপনি চাইলে ১০০vh করতে পারেন */
+    object-fit: cover;
+}
+
+/* টেক্সটের দুই পাশে লাইনের স্টাইল */
+.side-lines {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.side-lines::before,
+.side-lines::after {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid var(--primary); /* লাইনের পুরুত্ব ও রঙ */
+    margin: 0 15px;
+    max-width: 100px; /* লাইনের দৈর্ঘ্য */
+}
+
+/* মেইন টাইটেল একটু বড় করার জন্য */
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+/* এনিমেশন যাতে স্মুথ হয় */
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+/* About Section Styles */
+.about-section {
+    background: var(--card);
+    border-radius: var(--radius);
+}
+
+/* হেডিং বামে রাখার জন্য (যদি আগে side-lines সেন্টার করা থাকে) */
+#about-title {
+    text-align: left;
+    font-weight: 800;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* ইমেজের সাইজ সামঞ্জস্যপূর্ণ করার জন্য */
+.about-img-fixed {
+    max-height: 400px; /* আপনি চাইলে এটা বাড়িয়ে কমিয়ে নিতে পারেন */
+    width: auto;
+    border-radius: var(--radius);
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* রেসপন্সিভ সেটিংস */
+@media (max-width: 991px) {
+    #about-title {
+        text-align: center; /* মোবাইলে হেডিং সেন্টারে থাকবে */
+    }
+    .about-text {
+        text-align: center; /* মোবাইলে টেক্সট সেন্টারে থাকবে */
+    }
+    .about-text .list-group-item {
+        text-align: left; /* লিস্ট আইটেম বামেই থাকবে */
+        display: inline-block;
+    }
+    .about-img-fixed {
+        max-height: 300px; /* মোবাইলে ইমেজের হাইট কিছুটা কম */
+        margin-top: 20px;
+    }
+    .d-flex {
+        justify-content: center; /* মোবাইলে বাটন সেন্টারে থাকবে */
+    }
+}
+
+
