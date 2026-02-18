@@ -1,6 +1,10 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/common-elements.php'; ?>
 
+<head>
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
 <!-- About Section -->
 <div class="about-section card" aria-labelledby="about-title">
   <div class="about-text">
@@ -22,17 +26,17 @@
 </div>
 
 <!-- Banner Section -->
-<div class="banner-section" aria-labelledby="banner-title">
+<div class="banner-section card" aria-labelledby="banner-title">
   <h2 id="banner-title">Want to be a UK Student?</h2>
   <p>Student Admission London provides expert guidance for international students who want to study in the UK. From course and university selection to scholarship support, visa guidance, and interview preparation — we support you at every step to make your UK education journey smooth, secure, and successful.</p>
   <div class="position-relative">
     <input class="form-control border-0 bg-dark rounded-pill w-100 py-4 ps-4 pe-5" type="text" placeholder="Your email">
-    <button type="button" class="btn btn-primary py-3 px-4 position-absolute top-0 end-0 me-2">SignUp</button>
+    <button type="button" class="btn btn-primary py-3 px-4 position-absolute top-0 end-0 me-2 cta-btn">SignUp</button>
   </div>
 </div>
 
 <!-- Blogs Section -->
-<div class="blogs-section" aria-labelledby="blogs-title">
+<div class="blogs-section card" aria-labelledby="blogs-title">
   <h2 id="blogs-title">Our Recent Posts</h2>
   <div class="blog-grid">
     <div class="blog-item">
