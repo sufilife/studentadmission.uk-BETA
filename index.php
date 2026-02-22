@@ -140,31 +140,39 @@
         data-size="large">
       </div>
       <!-- Review Form -->
-      <form id="reviewForm" class="mx-auto" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; max-width:800px;">
-        <input type="hidden" name="google_sub" id="google_sub">
-        <input type="hidden" name="picture" id="picture">
-        <div class="field">
-          <label>Full Name</label>
-          <input type="text" name="name" id="name" class="form-control rounded-pill" readonly>
-        </div>
-        <div class="field">
-          <label>Email Address</label>
-          <input type="email" name="email" id="email" class="form-control rounded-pill" readonly>
-        </div>
-        <div class="field">
-          <label>WhatsApp Number</label>
-          <input type="tel" name="whatsapp" class="form-control rounded-pill" required>
-        </div>
-        <div class="field">
-          <label>Which service did you use?</label>
-          <select name="service_used" class="form-control rounded-pill" required>
-            <option value="">Select service</option>
-            <option>End-to-End UK Admission & Relocation Service</option>
-            <option>UK Admission Support Services</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Rating</label>
+      <div class="review-card">
+  <div class="review-header">
+     </div>
+
+  <form id="reviewForm" class="review-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="name" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="email" readonly>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>WhatsApp Number</label>
+      <input type="tel" required>
+    </div>
+
+    <div class="form-group">
+      <label>Service Used</label>
+      <select required>
+        <option value="">Select service</option>
+        <option>End-to-End UK Admission & Relocation</option>
+        <option>UK Admission Support</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Rating</label>
           <select name="rating" class="form-control rounded-pill" required>
             <option value="">Select Rating</option>
             <option value="5">★★★★★</option>
@@ -173,15 +181,19 @@
             <option value="2">★★☆☆☆</option>
             <option value="1">★☆☆☆☆</option>
           </select>
-        </div>
-        <div class="field" style="grid-column: span 2;">
-          <label>Your Review</label>
-          <textarea name="review" class="form-control" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="cta-btn rounded-pill px-5 mt-3" style="grid-column: span 2;">
-          Submit Verified Review
-        </button>
-      </form>
+      <input type="hidden" name="rating">
+    </div>
+
+    <div class="form-group full">
+      <label>Your Review</label>
+      <textarea rows="4" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">
+      Submit Verified Review
+    </button>
+  </form>
+</div>
       <p id="reviewMessage" class="review-message"></p>
     </div>
     <!-- Approved Reviews List -->
