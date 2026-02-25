@@ -48,72 +48,66 @@
   </div>
 </div>
 
-<!-- Form Section -->
-<div id="apply-form" class="form-section card" aria-labelledby="form-title">
-  <div>
-    <h2 id="form-title">Apply Now — Start Your Free Application</h2>
-    <p>Fill the short form and our adviser will contact you on WhatsApp within 24 hours.</p>
-    <form id="leadForm" aria-describedby="formMsg">
-      <h2 style="text-align: center;">Apply Now — Start Your Free Application</h2>
-          <p style="margin:0;color:var(--muted)">Fill the short form and our adviser will contact you on WhatsApp within 24 hours.</p>
-          <form id="leadForm" style="margin-top:12px">
-            <div class="field">
-              <label for="fullName">Full Name *</label>
-              <input id="fullName" type="text" required placeholder="e.g. Mohammad Hasan">
-            </div>
-            <div class="field">
-              <label for="phone">WhatsApp Number (with country code) *</label>
-              <input id="phone" type="tel" required placeholder="+447446969466">
-            </div>
-            <div class="field">
-              <label for="email">Email *</label>
-              <input id="email" type="email" required placeholder="yourname@example.com">
-            </div>
-            <div class="field">
-              <label for="education">Last Education (Institute, Year, Result)</label>
-              <input id="education" type="text" placeholder="e.g. BUET, 2023, 3.50">
-            </div>
-            <div class="row">
-              <div class="field" style="flex:1">
-                <label for="moiStatus">Do you have IELTS / TOEFL or MOI?</label>
-                <select id="moiStatus">
-                  <option value="MOI">MOI</option>
-                  <option value="IELTS">IELTS</option>
-                  <option value="TOEFL">TOEFL</option>
-                  <option value="None">None</option>
-                  <option value="Planning">Planning</option>
-                </select>
-              </div>
-              <div class="field" style="flex:1">
-                <label for="intake">Preferred Intake</label>
-                <select id="intake">
-                  <option>Jan - Feb'26 [Winter Intake]</option>
-                  <option>Mar - Apr'26 [Winter/Spring Term]</option>
-                  <option>Sep - Oct'26 [Main Intake]</option>
-                  <option>Nov - Dec'26 [Autumn Term]</option>
-                  <option>Later</option>
-                </select>
-              </div>
-            </div>
-            <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
-              <button id="submitBtn" type="submit" class="cta-btn">Continue</button>
-            </div>
-            <p id="formMsg" style="margin-top:10px;color:var(--muted);font-size:14px"></p>
-          </form>
+<!-- Form Section - Review Form Design Applied -->
+<section id="apply-form" class="review-form" aria-labelledby="form-title">
+  <div class="card">
+    <h2 id="form-title" style="text-align:center">Apply Now — Start Your Free Application</h2>
+    <p style="margin:0;color:var(--muted);text-align:center">Fill the short form and our adviser will contact you on WhatsApp within 24 hours.</p>
+
+    <form id="leadForm" style="margin-top:20px" aria-describedby="formMsg">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input id="fullName" type="text" required placeholder="e.g. Mohammad Hasan" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="phone">WhatsApp Number (with country code) *</label>
+          <input id="phone" type="tel" required placeholder="+447446969466" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input id="email" type="email" required placeholder="yourname@example.com" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="education">Last Education (Institute, Year, Result)</label>
+        <input id="education" type="text" placeholder="e.g. BUET, 2023, 3.50" class="form-control">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="moiStatus">Do you have IELTS / TOEFL or MOI?</label>
+          <select id="moiStatus" class="form-control">
+            <option value="MOI">MOI</option>
+            <option value="IELTS">IELTS</option>
+            <option value="TOEFL">TOEFL</option>
+            <option value="None">None</option>
+            <option value="Planning">Planning</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="intake">Preferred Intake</label>
+          <select id="intake" class="form-control">
+            <option>Jan - Feb'26 [Winter Intake]</option>
+            <option>Mar - Apr'26 [Winter/Spring Term]</option>
+            <option>May - Jun'26 [Summer Intake]</option>
+            <option>Jul - Aug'26 [Summer Break]</option>
+            <option>Sep - Oct'26 [Main Intake]</option>
+            <option>Nov - Dec'26 [Autumn Term]</option>
+            <option>Later</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="submitBtn" type="submit" class="submit-btn cta-btn">Continue <span class="spinner" id="spinner"></span></button>
+      <p id="formMsg" style="margin-top:10px;color:var(--muted);font-size:14px" role="alert"></p>
     </form>
   </div>
-  <aside>
-    <!-- Sidebar as in original -->
-  </aside>
-</div>
+</section>
 
-<!-- Testimonials Section -->
-<div class="testimonials-section card" aria-labelledby="success-title">
-  <div id="success-title">Success Stories</div>
-  <div>
-    <!-- Testimonials as in original -->
-  </div>
-</div>
+<?php include 'includes/footer.php'; ?>
 
   <script>
     // Hamburger menu toggle
