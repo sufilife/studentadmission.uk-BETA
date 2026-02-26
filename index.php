@@ -6,14 +6,103 @@
     <link rel="manifest" href="/manifest.json">
 </head>
 
+
+<!-- Hero/Automatic Slideshow -->
+<style>
+.hero-slideshow {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none; /* hidden initially */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-slideshow img.active {
+  display: block;
+}
+
+.hero-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  z-index: 10;
+  padding: 0 20px;
+}
+
+.hero-caption h5 {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+.hero-caption h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.hero-caption p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.hero-caption .cta-btn {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  padding: 0.8rem 2rem;
+}
+
+/* Optional: fade animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: 0.4;}
+  to {opacity: 1;}
+}
+</style>
+
+<div class="hero-slideshow">
+  <img src="img/carousel-1.jpg" class="active fade" alt="UK Study Image 1">
+  <img src="img/carousel-2.jpg" class="fade" alt="UK Study Image 2">
+
+ 
+</div>
+
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll(".hero-slideshow img");
+
+function showSlides() {
+  slides.forEach((slide, index) => {
+    slide.classList.remove("active");
+  });
+  slideIndex++;
+  if (slideIndex > slides.length) slideIndex = 1;
+  slides[slideIndex - 1].classList.add("active");
+  setTimeout(showSlides, 5000); // 5 seconds per slide
+}
+
+// Initialize slideshow
+showSlides();
+</script>
 <!-- Hero/Carousel -->
 <div class="hero" id="header-carousel" class="carousel slide" data-bs-ride="carousel" aria-labelledby="hero-title">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="w-100" src="img/carousel-1.jpg" alt="UK Study Carousel Image 1" loading="lazy">
-      <div class="carousel-caption d-flex flex-column align-items-center justify-content-center animated fadeIn">
-        <div class="title mx-5 px-5 animated slideUp">
-          <div class="title-center">
+        <div class="title-center">
             <h5>Welcome</h5>
             <h1 class="display-1" id="hero-title" style="font-size: clamp(2rem, 5vw, 4rem);">STUDENT ADMISSION LONDON</h1>
           </div>
@@ -25,36 +114,8 @@
         <a href="https://studentadmission.uk/consultation-booking-form.php" class="cta-btn animated slideUp">
           Book Your Free Consultation
         </a>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img class="w-100" src="img/carousel-2.jpg" alt="UK University Carousel Image 2" loading="lazy">
-      <div class="carousel-caption d-flex flex-column align-items-center justify-content-center animated fadeIn">
-        <div class="title mx-5 px-5 animated slideUp">
-          <div class="title-center">
-            <h5>Welcome</h5>
-            <h1 class="display-1" style="font-size: clamp(2rem, 5vw, 4rem);">STUDENT ADMISSION LONDON</h1>
-          </div>
         </div>
-        <p class="fs-5 mb-5 animated slideUp" style="font-size: clamp(1rem, 3vw, 1.5rem);">
-          British Council Certified Consultant<br>
-          APPLY NOW FOR 2026 JAN | FEB | MAY INTAKE
-        </p>
-        <a href="https://studentadmission.uk/consultation-booking-form.php" class="cta-btn animated slideUp">
-          Book Your Free Consultation
-        </a>
-      </div>
     </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 
 <!-- About Section -->
 <div class="about-section card" aria-labelledby="about-title">
