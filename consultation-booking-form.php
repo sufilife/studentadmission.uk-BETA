@@ -13,211 +13,226 @@
   </div>
 </div>
 
-<!-- Main Form Content -->
-<div class="card" aria-labelledby="form-title">
-  <h2 id="form-title">Reserve Your Free Consultation</h2>
-  <p>Complete the form to book a 20–30 minute session with our certified counsellors.</p>
-  <form id="consultForm" aria-describedby="formMsg">
-      <form id="consultForm" style="margin-top:12px" aria-describedby="formMsg">
-        <!-- SECTION 1: Personal Information -->
-        <div class="section">
-          <h3>Personal Information</h3>
-          <div class="grid">
-            <div class="field">
-              <label for="fullName">Full Name *</label>
-              <input id="fullName" name="fullName" type="text" placeholder="e.g. Mohammad Hasan" required>
+<!-- Main Form Content - Review Form Design Applied -->
+<section class="review-form" aria-labelledby="form-title">
+  <div class="card">
+    <h2 id="form-title">Reserve Your Free Consultation</h2>
+    <p>Complete the form to book a 20–30 minute session with our certified counsellors.</p>
+
+    <form id="consultForm" aria-describedby="formMsg">
+
+      <!-- SECTION 1: Personal Information -->
+      <div class="section">
+        <h3>Personal Information</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input id="fullName" name="fullName" type="text" placeholder="e.g. Mohammad Hasan" required class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required class="form-control">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp Number *</label>
+            <input id="phone" name="phone" type="tel" placeholder="+8801XXXXXXXXX" required class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth (optional)</label>
+            <input id="dob" name="dob" type="date" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: Academic Background -->
+      <div class="section">
+        <h3>Academic Background</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="educationLevel">Current / Last Education Level *</label>
+            <select id="educationLevel" name="educationLevel" required class="form-control">
+              <option value="">-- Select --</option>
+              <option>SSC / O-Level</option>
+              <option>HSC / A-Level</option>
+              <option>Diploma</option>
+              <option>Bachelor's Running</option>
+              <option>Bachelor's Completed</option>
+              <option>Master's Running</option>
+              <option>Master's Completed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="major">Field of Study / Major *</label>
+            <input id="major" name="major" type="text" placeholder="e.g. Business, Engineering" required class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="result">Result / GPA / CGPA (optional)</label>
+          <input id="result" name="result" type="text" placeholder="e.g. GPA 3.5 / CGPA 3.2" class="form-control">
+        </div>
+      </div>
+
+      <!-- SECTION 3: Study Abroad Preference -->
+      <div class="section">
+        <h3>Study Abroad Preference</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="preferredCountry">Preferred Country for Study *</label>
+            <select id="preferredCountry" name="preferredCountry" required class="form-control">
+              <option value="">-- Select Country --</option>
+              <option>United Kingdom</option>
+              <option>Canada</option>
+              <option>USA</option>
+              <option>Australia</option>
+              <option>Germany</option>
+              <option>Malaysia</option>
+              <option>Finland</option>
+              <option>Sweden</option>
+              <option>Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="programLevel">Intended Program Level *</label>
+            <select id="programLevel" name="programLevel" required class="form-control">
+              <option value="">-- Select --</option>
+              <option>Foundation</option>
+              <option>Diploma</option>
+              <option>Bachelor's</option>
+              <option>Pre-Master's</option>
+              <option>Master's</option>
+              <option>PhD</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subjectArea">Desired Subject Area *</label>
+          <input id="subjectArea" name="subjectArea" type="text" placeholder="e.g. IT, Business, Health" required class="form-control">
+        </div>
+      </div>
+
+      <!-- SECTION 4: Budget & Support -->
+      <div class="section">
+        <h3>Budget & Sponsor</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="budget">Annual Study Budget (approx) *</label>
+            <select id="budget" name="budget" required class="form-control">
+              <option value="">-- Select Range --</option>
+              <option>Under 5 Lac BDT</option>
+              <option>5–10 Lac BDT</option>
+              <option>10–15 Lac BDT</option>
+              <option>15–20 Lac BDT</option>
+              <option>20–30 Lac BDT</option>
+              <option>30+ Lac BDT</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sponsor">Who Will Sponsor Your Study? *</label>
+            <select id="sponsor" name="sponsor" required class="form-control">
+              <option value="">-- Select --</option>
+              <option>Father</option>
+              <option>Mother</option>
+              <option>Guardian</option>
+              <option>Self-funded</option>
+              <option>Education Loan</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 5: Consultation Scheduling -->
+      <div class="section">
+        <h3>Consultation Scheduling</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prefDate">Preferred Date for Consultation *</label>
+            <input id="prefDate" name="prefDate" type="date" required class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="timeSlot">Preferred Time Slot *</label>
+            <select id="timeSlot" name="timeSlot" required class="form-control">
+              <option value="">-- Select Slot --</option>
+              <option>10 AM – 12 PM</option>
+              <option>12 PM – 2 PM</option>
+              <option>2 PM – 4 PM</option>
+              <option>4 PM – 6 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mode">Consultation Mode *</label>
+            <select id="mode" name="mode" required class="form-control">
+              <option value="">-- Select Mode --</option>
+              <option>WhatsApp Call</option>
+              <option>Google Meet</option>
+              <option>In Person (Office Visit)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="englishProf">English Proficiency</label>
+            <select id="englishProf" name="englishProf" class="form-control">
+              <option value="">-- Select --</option>
+              <option>MOI</option>
+              <option>IELTS</option>
+              <option>TOEFL</option>
+              <option>Duolingo</option>
+              <option>None</option>
+              <option>Planning to take</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 6: Additional Information -->
+      <div class="section">
+        <h3>Additional Information</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Do you have a passport? *</label>
+            <div class="inline">
+              <label><input type="radio" name="hasPassport" value="Yes" required> Yes</label>
+              <label><input type="radio" name="hasPassport" value="No" required> No</label>
             </div>
-            <div class="field">
-              <label for="email">Email Address *</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" required>
-            </div>
-            <div class="field">
-              <label for="phone">Phone / WhatsApp Number *</label>
-              <input id="phone" name="phone" type="tel" placeholder="+8801XXXXXXXXX" required>
-            </div>
-            <div class="field">
-              <label for="dob">Date of Birth (optional)</label>
-              <input id="dob" name="dob" type="date">
+          </div>
+          <div class="form-group">
+            <label>Any previous visa rejection? *</label>
+            <div class="inline">
+              <label><input type="radio" name="visaRejected" value="No" checked required> No</label>
+              <label><input type="radio" name="visaRejected" value="Yes" required> Yes</label>
             </div>
           </div>
         </div>
-        <!-- SECTION 2: Academic Background -->
-        <div class="section">
-          <h3>Academic Background</h3>
-          <div class="grid">
-            <div class="field">
-              <label for="educationLevel">Current / Last Education Level *</label>
-              <select id="educationLevel" name="educationLevel" required>
-                <option value="">-- Select --</option>
-                <option>SSC / O-Level</option>
-                <option>HSC / A-Level</option>
-                <option>Diploma</option>
-                <option>Bachelor's Running</option>
-                <option>Bachelor's Completed</option>
-                <option>Master's Running</option>
-                <option>Master's Completed</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="major">Field of Study / Major *</label>
-              <input id="major" name="major" type="text" placeholder="e.g. Business, Engineering" required>
-            </div>
-            <div class="field full">
-              <label for="result">Result / GPA / CGPA (optional)</label>
-              <input id="result" name="result" type="text" placeholder="e.g. GPA 3.5 / CGPA 3.2">
-            </div>
-          </div>
+        <div id="rejectionReasonWrap" class="form-group full hidden">
+          <label for="rejectionReason">If Yes, explain reason (short)</label>
+          <input id="rejectionReason" name="rejectionReason" type="text" placeholder="Brief explanation" class="form-control">
         </div>
-        <!-- SECTION 3: Study Abroad Preference -->
-        <div class="section">
-          <h3>Study Abroad Preference</h3>
-          <div class="grid">
-            <div class="field">
-              <label for="preferredCountry">Preferred Country for Study *</label>
-              <select id="preferredCountry" name="preferredCountry" required>
-                <option value="">-- Select Country --</option>
-                <option>United Kingdom</option>
-                <option>Canada</option>
-                <option>USA</option>
-                <option>Australia</option>
-                <option>Germany</option>
-                <option>Malaysia</option>
-                <option>Finland</option>
-                <option>Sweden</option>
-                <option>Others</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="programLevel">Intended Program Level *</label>
-              <select id="programLevel" name="programLevel" required>
-                <option value="">-- Select --</option>
-                <option>Foundation</option>
-                <option>Diploma</option>
-                <option>Bachelor's</option>
-                <option>Pre-Master's</option>
-                <option>Master's</option>
-                <option>PhD</option>
-              </select>
-            </div>
-            <div class="field full">
-              <label for="subjectArea">Desired Subject Area *</label>
-              <input id="subjectArea" name="subjectArea" type="text" placeholder="e.g. IT, Business, Health" required>
-            </div>
-          </div>
+        <div class="form-group">
+          <label for="notes">Additional Notes / Questions (optional)</label>
+          <textarea id="notes" name="notes" placeholder="Any special requests..." class="form-control"></textarea>
         </div>
-        <!-- SECTION 4: Budget & Support -->
-        <div class="section">
-          <h3>Budget & Sponsor</h3>
-          <div class="grid">
-            <div class="field">
-              <label for="budget">Annual Study Budget (approx) *</label>
-              <select id="budget" name="budget" required>
-                <option value="">-- Select Range --</option>
-                <option>Under 5 Lac BDT</option>
-                <option>5–10 Lac BDT</option>
-                <option>10–15 Lac BDT</option>
-                <option>15–20 Lac BDT</option>
-                <option>20–30 Lac BDT</option>
-                <option>30+ Lac BDT</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="sponsor">Who Will Sponsor Your Study? *</label>
-              <select id="sponsor" name="sponsor" required>
-                <option value="">-- Select --</option>
-                <option>Father</option>
-                <option>Mother</option>
-                <option>Guardian</option>
-                <option>Self-funded</option>
-                <option>Education Loan</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <!-- SECTION 5: Consultation Scheduling -->
-        <div class="section">
-          <h3>Consultation Scheduling</h3>
-          <div class="grid">
-            <div class="field">
-              <label for="prefDate">Preferred Date for Consultation *</label>
-              <input id="prefDate" name="prefDate" type="date" required>
-            </div>
-            <div class="field">
-              <label for="timeSlot">Preferred Time Slot *</label>
-              <select id="timeSlot" name="timeSlot" required>
-                <option value="">-- Select Slot --</option>
-                <option>10 AM – 12 PM</option>
-                <option>12 PM – 2 PM</option>
-                <option>2 PM – 4 PM</option>
-                <option>4 PM – 6 PM</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="mode">Consultation Mode *</label>
-              <select id="mode" name="mode" required>
-                <option value="">-- Select Mode --</option>
-                <option>WhatsApp Call</option>
-                <option>Google Meet</option>
-                <option>In Person (Office Visit)</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="englishProf">English Proficiency</label>
-              <select id="englishProf" name="englishProf">
-                <option value="">-- Select --</option>
-                <option>MOI</option>
-                <option>IELTS</option>
-                <option>TOEFL</option>
-                <option>Duolingo</option>
-                <option>None</option>
-                <option>Planning to take</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <!-- SECTION 6: Additional Information -->
-        <div class="section">
-          <h3>Additional Information</h3>
-          <div class="grid">
-            <div class="field">
-              <label>Do you have a passport? *</label>
-              <div class="inline">
-                <label style="font-size:14px"><input type="radio" name="hasPassport" value="Yes" required> Yes</label>
-                <label style="font-size:14px"><input type="radio" name="hasPassport" value="No" required> No</label>
-              </div>
-            </div>
-            <div class="field">
-              <label>Any previous visa rejection? *</label>
-              <div class="inline">
-                <label style="font-size:14px"><input type="radio" name="visaRejected" value="No" checked required> No</label>
-                <label style="font-size:14px"><input type="radio" name="visaRejected" value="Yes" required> Yes</label>
-              </div>
-            </div>
-            <div id="rejectionReasonWrap" class="field full hidden">
-              <label for="rejectionReason">If Yes, explain reason (short)</label>
-              <input id="rejectionReason" name="rejectionReason" type="text" placeholder="Brief explanation">
-            </div>
-            <div class="field full">
-              <label for="notes">Additional Notes / Questions (optional)</label>
-              <textarea id="notes" name="notes" placeholder="Any special requests or details you want the counsellor to know..."></textarea>
-            </div>
-          </div>
-        </div>
-        <!-- SECTION 7: Consent -->
-        <div class="section">
-          <label style="font-weight:600">
-            <input id="consent" name="consent" type="checkbox" required>
-            &nbsp;I confirm the information above is accurate and I agree to be contacted by Student Admission.
-          </label>
-        </div>
-        <div class="form-cta" style="justify-content:flex-end;gap:12px">
-          <button id="bookBtn" class="cta-btn" type="submit">Book Free Consultancy</button>
-          <button id="clearBtn" type="button" class="secondary">Clear</button>
-        </div>
-        <p id="formMessage" class="note" aria-live="polite"></p>
-      </form>
-  </form>
-</div>
+      </div>
+
+      <!-- SECTION 7: Consent -->
+      <div class="section">
+        <label style="font-weight:600">
+          <input id="consent" name="consent" type="checkbox" required>
+          &nbsp;I confirm the information above is accurate and I agree to be contacted by Student Admission.
+        </label>
+      </div>
+
+      <div class="form-cta" style="justify-content:flex-end;gap:12px">
+        <button id="bookBtn" class="submit-btn cta-btn" type="submit">Book Free Consultancy</button>
+        <button id="clearBtn" type="button" class="secondary">Clear</button>
+      </div>
+      <p id="formMessage" class="note" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<?php include 'includes/footer.php'; ?>
   <script>
     function toggleMenu(){document.getElementById('navMenu').classList.toggle('active');}
     window.onscroll=function(){document.getElementById('backToTop').style.display=(document.body.scrollTop>20||document.documentElement.scrollTop>20)?'block':'none';};
