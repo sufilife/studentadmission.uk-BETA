@@ -10,6 +10,11 @@
   font-family: Inter, "Segoe UI", Roboto, "Noto Sans Bengali", Arial, sans-serif;
 }
 
+/* All headings and section titles center-aligned */
+h1, h2, h3, h4, h5, h6, .section-title, .section-subtitle {
+    text-align: center;
+}
+
 /* Global Styles */
 * {
   box-sizing: border-box;
