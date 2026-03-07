@@ -6,7 +6,6 @@
     <link rel="manifest" href="/manifest.json">
 </head>
 
-
 <!-- Hero/Automatic Slideshow -->
 <style>
 .hero-slideshow {
@@ -16,7 +15,6 @@
   height: 80vh;
   overflow: hidden;
 }
-
 .hero-slideshow img {
   width: 100%;
   height: 100%;
@@ -26,96 +24,55 @@
   top: 0;
   left: 0;
 }
-
 .hero-slideshow img.active {
   display: block;
 }
-
-.hero-caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center;
-  z-index: 10;
-  padding: 0 20px;
-}
-
-.hero-caption h5 {
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
-  margin-bottom: 0.5rem;
-}
-
-.hero-caption h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  margin-bottom: 1rem;
-}
-
-.hero-caption p {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  margin-bottom: 1.5rem;
-}
-
-.hero-caption .cta-btn {
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
-  padding: 0.8rem 2rem;
-}
-
 /* Optional: fade animation */
 .fade {
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 0.8s;
 }
-
 @keyframes fade {
   from {opacity: 0.4;}
   to {opacity: 1;}
 }
 </style>
-
 <div class="hero-slideshow">
   <img src="img/carousel-1.jpg" class="active fade" alt="UK Study Image 1">
   <img src="img/carousel-2.jpg" class="fade" alt="UK Study Image 2">
+</div>
 
- 
+<!-- Caption (ইমেজের নিচে মুভ) -->
+<div class="hero-caption" style="text-align: center; margin-top: 05px; margin-bottom: 20px;"> <!-- নিচে মার্জিন দিয়ে পজিশন -->
+  <div class="title-center">
+    <h3>Welcome</h3>
+    <h1 class="display-1" id="hero-title" style="font-size: clamp(2rem, 5vw, 4rem);">STUDENT ADMISSION LONDON</h1>
+  </div>
+  <p class="fs-5 mb-5" style="font-size: clamp(1rem, 3vw, 1.5rem);">
+    British Council Certified Consultant<br>
+    APPLY NOW FOR 2026 JAN | FEB | MAY INTAKE
+  </p>
+  <a href="https://studentadmission.uk/consultation-booking-form.php" class="cta-btn">
+    Book Your Free Consultation
+  </a>
 </div>
 
 <script>
 let slideIndex = 0;
 const slides = document.querySelectorAll(".hero-slideshow img");
-
 function showSlides() {
-  slides.forEach((slide, index) => {
+  slides.forEach((slide) => {
     slide.classList.remove("active");
   });
   slideIndex++;
   if (slideIndex > slides.length) slideIndex = 1;
   slides[slideIndex - 1].classList.add("active");
-  setTimeout(showSlides, 5000); // 5 seconds per slide
+  setTimeout(showSlides, 1000); // 4 সেকেন্ড (0.4s খুব দ্রুত, তাই 4s করা হলো)
 }
-
 // Initialize slideshow
 showSlides();
 </script>
-<!-- Hero/Carousel -->
-<div class="hero" id="header-carousel" class="carousel slide" data-bs-ride="carousel" aria-labelledby="hero-title">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-        <div class="title-center">
-            <h5>Welcome</h5>
-            <h1 class="display-1" id="hero-title" style="font-size: clamp(2rem, 5vw, 4rem);">STUDENT ADMISSION LONDON</h1>
-          </div>
-        </div>
-        <p class="fs-5 mb-5 animated slideUp" style="font-size: clamp(1rem, 3vw, 1.5rem);">
-          British Council Certified Consultant<br>
-          APPLY NOW FOR 2026 JAN | FEB | MAY INTAKE
-        </p>
-        <a href="https://studentadmission.uk/consultation-booking-form.php" class="cta-btn animated slideUp">
-          Book Your Free Consultation
-        </a>
-        </div>
-    </div>
+<!-- end of Hero -->
 
 <!-- About Section -->
 <div class="about-section card" aria-labelledby="about-title">
@@ -139,19 +96,62 @@ showSlides();
 
 <!-- Service Section -->
 <div class="service-section card" aria-labelledby="service-title">
-  <h2 id="service-title" class="animated fadeIn" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">How We Help You</h2>
-  <div class="service-item animated slideUp">
+  <h2 id="service-title" class="animated fadeIn" style="font-size: clamp(1.5rem, 4vw, 2.5rem); text-align: center; margin-bottom: 40px;">How We Help You</h2>
+
+  <div class="service-item animated slideUp" style="margin-bottom: 30px;">
     <div class="row g-0 align-items-center" style="display: flex; flex-wrap: wrap;">
       <div class="col-md-5">
         <img class="img-fluid rounded-circle" src="img/service-1.jpg" alt="International Student Counseling" loading="lazy">
       </div>
       <div class="col-md-7">
-        <h3 class="text-uppercase">International Student Counseling</h3>
+        <h2 class="text-uppercase">International Student Counseling</h2>
         <p>At Student Admission UK, our certified education consultants provide one-on-one guidance to international students — helping them make confident, informed decisions about studying in the UK and beyond.</p>
         <a class="cta-btn" href="">Read More <i class="fa fa-arrow-right ms-1"></i></a>
       </div>
     </div>
   </div>
+
+  <div class="service-item animated slideUp" style="margin-bottom: 30px;">
+    <div class="row g-0 align-items-center" style="display: flex; flex-wrap: wrap;">
+      <div class="col-md-5">
+        <img class="img-fluid rounded-circle" src="img/service-2.jpg" alt="Scholarship Assistance" loading="lazy">
+      </div>
+      <div class="col-md-7">
+        <h2 class="text-uppercase">Scholarship Assistance</h2>
+        <p>Studying in the UK is a dream for many students, but tuition fees and living expenses can be a major concern. At STUDENT ADMISSION, we help turn that dream into reality through our dedicated Scholarship Assistance service.</p>
+        <a class="cta-btn" href="">Read More <i class="fa fa-arrow-right ms-1"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-item animated slideUp" style="margin-bottom: 30px;">
+    <div class="row g-0 align-items-center" style="display: flex; flex-wrap: wrap;">
+      <div class="col-md-5">
+        <img class="img-fluid rounded-circle" src="img/service-3.jpg" alt="Higher Study Budget Planing" loading="lazy">
+      </div>
+      <div class="col-md-7">
+        <h2 class="text-uppercase">Higher Study Budget Planing</h2>
+        <p>Planning your higher studies abroad is exciting — but managing the budget can feel overwhelming for many students and parents. Tuition fees, accommodation, living expenses, visa fees, travel, and unexpected costs… everything adds up quickly.</p>
+        <a class="cta-btn" href="">Read More <i class="fa fa-arrow-right ms-1"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-item animated slideUp" style="margin-bottom: 30px;">
+    <div class="row g-0 align-items-center" style="display: flex; flex-wrap: wrap;">
+      <div class="col-md-5">
+        <img class="img-fluid rounded-circle" src="img/service-4.jpg" alt="University Interview Preparation" loading="lazy">
+      </div>
+      <div class="col-md-7">
+        <h2 class="text-uppercase">University Interview Preparation</h2>
+        <p>Securing a place at a UK university is a life-changing opportunity—and for many courses, scholarships, and competitive programs, the University Interview is a crucial part of the admission process.</p>
+        <a class="cta-btn" href="">Read More <i class="fa fa-arrow-right ms-1"></i></a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+  
   <!-- Add other service items similarly -->
 </div>
 
@@ -173,16 +173,23 @@ showSlides();
       <img class="img-fluid" src="https://studentadmission.uk/img/Blog-1.png" alt="Higher Education blog" loading="lazy">
       <a href="https://studentadmission.uk/Higher_Education_the_Right_Path_for_You__Find_Out_.php" target="_blank">Higher Education the Right Path for You? Find Out!</a>
     </div>
+    <div class="blog-item">
+      <img class="img-fluid" src="https://studentadmission.uk/img/Blog-2.png" alt="Higher Education blog" loading="lazy">
+      <a href="https://studentadmission.uk/Higher_Education_the_Right_Path_for_You__Find_Out_.php" target="_blank">Higher Education the Right Path for You? Find Out!</a>
+    </div>
+    <div class="blog-item">
+      <img class="img-fluid" src="https://studentadmission.uk/img/Blog-3.png" alt="Higher Education blog" loading="lazy">
+      <a href="https://studentadmission.uk/Higher_Education_the_Right_Path_for_You__Find_Out_.php" target="_blank">Higher Education the Right Path for You? Find Out!</a>
+    </div>
     <!-- Add all other blog items similarly -->
   </div>
 </div>
 
-<!-- Reviews Section (Improved Google Login with better error handling) -->
+<!-- Reviews Section -->
 <section id="reviews" class="reviews-section card animated fadeIn">
   <div class="container">
     <h2 class="section-title" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">Student Reviews</h2>
     <p class="section-subtitle" style="font-size: clamp(0.9rem, 2.5vw, 1.1rem);">Let Us know, what you feel about STUDENT ADMISSION LONDON.</p>
-
     <div class="review-form-card animated slideUp">
       <h3>Leave a Review</h3>
       <!-- Google Login Button -->
@@ -198,60 +205,51 @@ showSlides();
            data-text="signin_with"
            data-size="large">
       </div>
-
-      <!-- Review Form (hidden until login) -->
       <!-- Review Form -->
-<form id="reviewForm" class="review-form">
-  <input type="hidden" name="google_sub" id="google_sub">
-  <input type="hidden" name="picture" id="picture">
-
-  <div class="form-row">
-    <div class="form-group">
-      <label>Full Name</label>
-      <input type="text" id="name" name="name" readonly class="form-control rounded-pill"> <!-- name="name" যোগ করা হয়েছে -->
-    </div>
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" id="email" name="email" readonly class="form-control rounded-pill"> <!-- name="email" যোগ করা হয়েছে -->
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label>WhatsApp Number</label>
-    <input type="tel" name="whatsapp" class="form-control rounded-pill" required>
-  </div>
-
-  <div class="form-group">
-    <label>Service Used</label>
-    <select name="service_used" class="form-control rounded-pill" required>
-      <option value="">Select service</option>
-      <option>End-to-End UK Admission & Relocation Service</option>
-      <option>UK Admission Support Services</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label>Rating</label>
-    <select name="rating" class="form-control rounded-pill" required>
-      <option value="">Select Rating</option>
-      <option value="5">★★★★★</option>
-      <option value="4">★★★★☆</option>
-      <option value="3">★★★☆☆</option>
-      <option value="2">★★☆☆☆</option>
-      <option value="1">★☆☆☆☆</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label>Your Review</label>
-    <textarea name="review" class="form-control" rows="4" required></textarea>
-  </div>
-
-  <button type="submit" class="submit-btn cta-btn">Submit Verified Review</button>
-</form>
+      <form id="reviewForm" class="review-form">
+        <input type="hidden" name="google_sub" id="google_sub">
+        <input type="hidden" name="picture" id="picture">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="name" name="name" readonly class="form-control rounded-pill">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" name="email" readonly class="form-control rounded-pill">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>WhatsApp Number</label>
+          <input type="tel" name="whatsapp" class="form-control rounded-pill" required>
+        </div>
+        <div class="form-group">
+          <label>Service Used</label>
+          <select name="service_used" class="form-control rounded-pill" required>
+            <option value="">Select service</option>
+            <option>End-to-End UK Admission & Relocation Service</option>
+            <option>UK Admission Support Services</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Rating</label>
+          <select name="rating" class="form-control rounded-pill" required>
+            <option value="">Select Rating</option>
+            <option value="5">★★★★★</option>
+            <option value="4">★★★★☆</option>
+            <option value="3">★★★☆☆</option>
+            <option value="2">★★☆☆☆</option>
+            <option value="1">★☆☆☆☆</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Your Review</label>
+          <textarea name="review" class="form-control" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn cta-btn">Submit Verified Review</button>
+      </form>
       <p id="reviewMessage" class="review-message"></p>
     </div>
-
     <!-- Approved Reviews List -->
     <div class="reviews-list" id="reviewsList">
     </div>
@@ -273,7 +271,6 @@ function parseJwt(token) {
     return null;
   }
 }
-
 async function handleGoogleLogin(response) {
   try {
     console.log("Google Credential Received:", response.credential); // Debugging
@@ -282,12 +279,10 @@ async function handleGoogleLogin(response) {
       alert("Invalid Google response. Please try again.");
       return;
     }
-
     document.getElementById('google_sub').value = user.sub;
     document.getElementById('name').value = user.name;
     document.getElementById('email').value = user.email;
     document.getElementById('picture').value = user.picture || '';
-
     // Send to backend
     const authRes = await fetch('/api/google-auth.php', {
       method: 'POST',
@@ -299,10 +294,8 @@ async function handleGoogleLogin(response) {
         picture: user.picture
       })
     });
-
     const authData = await authRes.json();
     console.log("Backend Response:", authData); // Debugging
-
     if (authData.success) {
       document.getElementById('reviewForm').style.display = 'block';
       document.getElementById('reviewMessage').innerHTML = '<span style="color:green">Login successful! Now you can submit review.</span>';
@@ -314,10 +307,13 @@ async function handleGoogleLogin(response) {
     alert("Google login failed. Please check your internet or try again later.");
   }
 }
-
-// Review Form Submit
+// Review Form Submit with validation
 document.getElementById('reviewForm').addEventListener('submit', async function(e) {
   e.preventDefault();
+  if (!this.checkValidity()) { 
+    this.reportValidity(); // Browser validation
+    return; // Stop submit if invalid
+  }
   const formData = new FormData(this);
   const payload = Object.fromEntries(formData.entries());
   const res = await fetch('/api/submit-review.php', {
