@@ -34,7 +34,7 @@ body {
 /* Header */
 header {
   background: linear-gradient(180deg, #FFFFFF, var(--bg));
-  padding: 16px 2;
+  padding: 16px 0;
   box-shadow: 0 2px 10px rgba(68,68,68,0.1);
   position: sticky;
   top: 0;
@@ -46,6 +46,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 24px; /* কন্টেইনারের সাথে এলাইনমেন্টের জন্য */
 }
 .logo {
   display: flex;
@@ -54,7 +55,7 @@ header {
   animation: slideUp 0.5s ease-in;
 }
 .logo img {
-  height: 44px;
+  height: 40px;
   loading: lazy;
 }
 nav ul {
@@ -91,6 +92,22 @@ nav ul li a:hover {
   align-items: center;
   animation: slideUp 0.5s ease-in 0.2s;
 }
+.secondary { 
+    background: transparent; 
+    border: 1px solid #e6e9ee; 
+    padding: 10px 12px; 
+    border-radius: 10px; 
+    text-decoration: none;
+    color: var(--primary);
+    cursor: pointer; 
+    transition: transform 0.2s; 
+    min-width: 48px; 
+    min-height: 48px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.secondary:hover { transform: scale(1.05); }
 .contact-info div {
   font-size: 14px;
   color: var(--muted);
@@ -114,12 +131,12 @@ nav ul li a:hover {
   margin: 0;
   font-size: 28px;
   color: var(--primary);
-  animation: slideUp 0.8s ease-in;
+  animation: slideUp 0.4s ease-in; /* Duration কমানো */
 }
 .hero p {
   margin: 12px 0 18px;
   color: var(--muted);
-  animation: slideUp 0.8s ease-in 0.2s;
+  animation: slideUp 0.4s ease-in 0.2s; /* Duration কমানো */
 }
 
 /* CTA Button */
@@ -146,7 +163,7 @@ nav ul li a:hover {
   padding: 16px;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(68,68,68,0.04);
-  animation: slideUp 0.8s ease-in;
+  animation: slideUp 0.4s ease-in; /* Duration কমানো */
   transition: transform 0.3s ease-out;
 }
 .card:hover {
@@ -158,31 +175,33 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-  margin-top: 36px;
-  padding: 18px 0;
-  color: #000001;
-  font-size: 14px;
-  background: var(--primary);
-  background-image: url('https://studentadmission.uk/img/footer-bg.png');
-  background-size: cover;
-  background-position: 0 0;
-  animation: scrollBg 30s linear infinite;
+    margin-top: 36px;
+    padding: 18px 0;
+    color: #000001;
+    font-size: 14px;
+    background: var(--primary);
+    background-image: url('https://studentadmission.uk/img/footer-bg.png');
+    background-size: cover;
+    background-position: 0 0;
+    animation: scrollBg 30s linear infinite;
 }
 @media (prefers-reduced-motion: reduce) {
   footer { animation: none; }
 }
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  animation: fadeIn 1s ease-in;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+    padding: 0 24px;
 }
 .social {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 .social a {
   color: #000001;
@@ -214,7 +233,7 @@ footer {
   100% { transform: scale(1); }
 }
 
-/* Responsive */
+/* Responsive (ডুপ্লিকেট রিমুভ, একটা মার্জ করা) */
 @media (max-width: 980px) {
   .hero { grid-template-columns: 1fr; }
   .benefits { grid-template-columns: 1fr; }
@@ -229,20 +248,20 @@ footer {
 }
 
 /* Additional Styles for Specific Pages (Extend as Needed) */
-.about-section {align-items: center; animation: slideUp 0.8s ease-in; }
+.about-section { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; animation: slideUp 0.4s ease-in; } /* Duration কমানো */
 @media (prefers-reduced-motion: reduce) { .about-section { animation: none; } }
 .about-image img { max-width: 100%; border-radius: var(--radius); loading: lazy; transition: transform 0.3s; }
 .about-image img:hover { transform: scale(1.02); }
 .service-section { margin-top: 24px; animation: fadeIn 1s ease-in; }
 @media (prefers-reduced-motion: reduce) { .service-section { animation: none; } }
-.blog-grid { gap: 16px; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
 .blog-item img { width: 100%; height: auto; loading: lazy; transition: opacity 0.3s; }
 .blog-item img:hover { opacity: 0.9; }
 .review-form { max-width: 800px; margin: 0 auto; animation: slideUp 0.8s ease-in; }
 @media (prefers-reduced-motion: reduce) { .review-form { animation: none; } }
 .review-form .form-control { border-radius: 30px; transition: border-color 0.3s; }
 .review-form .form-control:focus { border-color: var(--accent); }
-.testimonial-grid { display: grid; gap: 16px; }
+.testimonial-grid { display: grid; gap: 16px; } /* রাখা হয়েছে */
 .testimonial { animation: fadeIn 1.2s ease-in; }
 @media (prefers-reduced-motion: reduce) { .testimonial { animation: none; } }
 /* Base styles for mobile-first (small screens) */
@@ -302,7 +321,7 @@ body {
   .benefits { grid-template-columns: 1fr; }
 }
 @media (min-width: 1200px) {
-  .container { max-width: 1200px; } /* Larger desktop */
+  .container { max-width: 1200px; padding: 32px; } /* Desktop-এ padding বাড়ানো */
 }
 h1 { font-size: clamp(24px, 5vw + 1rem, 48px); } /* Fluid headings */
 p { font-size: clamp(14px, 2vw + 0.5rem, 18px); }
@@ -313,6 +332,7 @@ img {
   transition: opacity 0.3s; /* Fade in effect */
 }
 img:hover { opacity: 0.9; }
+img:active { opacity: 0.9; } /* মোবাইলে টাচ active যোগ */
 .cta-btn, a {
   min-width: 48px;
   min-height: 48px;
@@ -323,20 +343,18 @@ img:hover { opacity: 0.9; }
   .hamburger { display: block; }
   nav ul.active { display: flex; flex-direction: column; } /* Show on toggle */
 }
-
-.review-form { 
-  max-width: 800px; 
-  margin: 0 auto; 
-  animation: slideUp 0.8s ease-in; 
+.review-form {
+  max-width: 800px;
+  margin: 0 auto;
+  animation: slideUp 0.8s ease-in;
 }
-.review-form .form-control { 
-  border-radius: 30px; 
-  transition: border-color 0.3s; 
+.review-form .form-control {
+  border-radius: 30px;
+  transition: border-color 0.3s;
 }
-.review-form .form-control:focus { 
-  border-color: var(--accent); 
+.review-form .form-control:focus {
+  border-color: var(--accent);
 }
-
 .review-form .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -347,17 +365,14 @@ img:hover { opacity: 0.9; }
     grid-template-columns: 1fr;
   }
 }
-
 .review-form .form-group {
   margin-bottom: 1rem;
 }
-
 .review-form label {
   font-weight: 500;
   margin-bottom: 6px;
   display: block;
 }
-
 .review-form input,
 .review-form select,
 .review-form textarea {
@@ -367,12 +382,10 @@ img:hover { opacity: 0.9; }
   border: 1px solid #e5e7eb;
   font-size: 0.95rem;
 }
-
 .review-form textarea {
   border-radius: 14px;
   resize: vertical;
 }
-
 .review-form .submit-btn {
   background: #0d6efd;
   color: #ffffff;
@@ -384,12 +397,10 @@ img:hover { opacity: 0.9; }
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .review-form .submit-btn:hover {
   background: #0b5ed7;
   transform: translateY(-1px);
 }
-
 .review-form input:focus,
 .review-form select:focus,
 .review-form textarea:focus {
