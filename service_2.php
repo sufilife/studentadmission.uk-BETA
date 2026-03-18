@@ -46,7 +46,7 @@ showSlides();
             <picture>
                 <source media="(min-width:150px)" srcset="img/service-1-300×300(Mobile).webp">
                 <source media="(min-width:150px)" srcset="img/service-1-400×400(Tablet).webp">
-                <img src="img/service-1-300×300(Mobile).webp" alt="International Student Counseling" loading="lazy">
+                <img src="img/service-1(100×100).webp" alt="International Student Counseling" loading="lazy">
             </picture>
             <h3>International Student Counseling</h3>
             <p>One-on-one expert guidance to choose the right UK university & course that matches your career goals and budget.</p>
@@ -61,9 +61,9 @@ showSlides();
         <!-- Service 2 -->
         <div class="card animated slideUp">
             <picture>
-                <source media="(min-width:150px)" srcset="img/service-2-600×600(Desktop).webp">
-                <source media="(min-width:150px)" srcset="img/service-2-400×400(Tablet).webp">
-                <img src="img/service-2-300×300(Mobile).webp" alt="Scholarship Assistance" loading="lazy">
+                <source media="(min-width:150px)" srcset="img/service-2-300×300(Mobile).webp">
+                <source media="(min-width:150px)" srcset="img/service-2-300×300(Mobile).webp">
+                <img src="img/service-2(100×100).webp" alt="Scholarship Assistance" loading="lazy">
             </picture>
             <h3>Scholarship & Funding Assistance</h3>
             <p>Up to £7,500 scholarship for UK universities. We handle full scholarship application process.</p>
