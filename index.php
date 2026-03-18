@@ -153,7 +153,11 @@
             $blogs = [
                 ["title" => "Higher Education the Right Path for You? Find Out!",    "link"  => "/Blogs/Higher_Education_the_Right_Path_for_You__Find_Out_.php",   "img"   => "1"            ],
                 ["title" => "Choose the Right Country for Your Higher Studies",      "link"  => "/Blogs/Choose_the_Right_Country_for_Your_Higher_Studies.php",     "img"   => "2"            ],
-                ["title" => "How to get a Job While Studying abroad",                "link"  => "/Blogs/How_to_get_a_Job_While_Studying_abroad.php",               "img"   => "3"            ]
+                ["title" => "How to get a Job While Studying abroad",                "link"  => "/Blogs/How_to_get_a_Job_While_Studying_abroad.php",               "img"   => "3"            ],
+                ["title" => "Prepare for Studying Abroad in Advance",                "link"  => "/Blogs/Prepare_for_Studying_Abroad_in_Advance.php",               "img"   => "4"            ],
+                ["title" => "UK Student Visa Updated Rules and Requirements 2026",   "link"  => "/Blogs/UK_Student_Visa_Updated_Rules_and_Requirements_2026.php",  "img"   => "5"            ],
+                ["title" => "Why You Should Study Abroad in 2026",	       	     "link"  => "/Blogs/Why_You_Should_Study_Abroad_in_2026.php",                      "img"   => "6"            ],
+                ["title" => "You need a Financial Plan for your Academic Year",      "link"  => "/Blogs/You_need_a_Financial_Plan_for_your_Academic_Year.php",     "img"   => "7"            ]
             ];
 
             foreach ($blogs as $blog): ?>
