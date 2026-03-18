@@ -1,287 +1,311 @@
-/* 1. Root Variables & Reset */
-:root {
-  --primary: #444444;
-  --accent: #2563EB;
-  --muted: #6B7280;
-  --bg: #F0F4F8;
-  --card: #FFFFFF;
-  --maxWidth: 1400px;
-  --radius: 1rem;
-  --section-gap: clamp(2rem, 8vw, 5rem);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+<?php include 'includes/header.php'; ?>
+<?php include 'includes/common-elements.php'; ?>
+
+<head>
+    <link href="/css/style.css" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        /* Index Specific internal adjustments */
+        .hero-slideshow {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9; /* মোবাইলে ইমেজ যেন চ্যাপ্টা না হয়ে যায় */
+            overflow: hidden;
+            border-radius: var(--radius);
+        }
+        .hero-slideshow picture {
+            width: 100%;
+            height: 100%;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .hero-slideshow picture.active {
+            display: block;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .hero-slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-caption {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        /* Responsive Fix for Why Choose Us and Services */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        /* Service Image Fix */
+        .service-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 1rem auto;
+            border: 4px solid var(--bg);
+        }
+        
+    </style>
+</head>
+
+<div class="container">
+    <div class="hero-slideshow">
+        <picture class="active">
+            <source media="(min-width: 992px)" srcset="img/carousel-1_1920x1080 (desktop).webp">
+            <source media="(min-width: 768px)" srcset="img/carousel-1_1280x720 (tablet).webp">
+            <img src="img/carousel-1_768x432 (mobile).webp" alt="UK Study Image 1">
+        </picture>
+        <picture>
+            <source media="(min-width: 992px)" srcset="img/carousel-2_1920x1080 (desktop).webp">
+            <source media="(min-width: 768px)" srcset="img/carousel-2_1280x720 (tablet).webp">
+            <img src="img/carousel-2_768x432 (mobile).webp" alt="UK Study Image 2">
+        </picture>
+    </div>
+
+    <div class="hero-caption">
+        <h3>Welcome</h3>
+        <h1 id="hero-title" style="color: var(--accent);">STUDENT ADMISSION LONDON</h1>
+        <p>
+            British Council Certified Consultant<br>
+            <strong>APPLY NOW FOR 2026 JAN | FEB | MAY INTAKE</strong>
+        </p>
+        <div style="margin-top: 2rem;">
+            <a href="https://studentadmission.uk/forms/consultation-booking-form.php" class="cta-btn">
+                Book Your Free Consultation
+            </a>
+        </div>
+    </div>
+</div>
+
+<section class="container">
+    <div class="card">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="grid-layout">
+            <div class="card" style="text-align: center; background: rgba(37, 99, 235, 0.03);">
+                <h5 style="color: var(--accent); margin-bottom: 10px;">Free Online Consultation</h5>
+                <p style="font-size: 0.95rem;">Book Your Free Online Consultation From Anywhere. Get Help With University Applications, Visa Assistance, and Scholarships.</p>
+            </div>
+            <div class="card" style="text-align: center; background: rgba(37, 99, 235, 0.03);">
+                <h5 style="color: var(--accent); margin-bottom: 10px;">Experienced Counsellor</h5>
+                <p style="font-size: 0.95rem;">Our Expert Consultants Help You Find A University Within Your Budget and Secure Top Scholarships.</p>
+            </div>
+            <div class="card" style="text-align: center; background: rgba(37, 99, 235, 0.03);">
+                <h5 style="color: var(--accent); margin-bottom: 10px;">Apply For Free</h5>
+                <p style="font-size: 0.95rem;">University and Visa Applications Are Free. We Don’t Charge Students Any Fees. We Work Directly With Partners.</p>
+            </div>
+            <div class="card" style="text-align: center; background: rgba(37, 99, 235, 0.03);">
+                <h5 style="color: var(--accent); margin-bottom: 10px;">Expert Visa Consultant</h5>
+                <p style="font-size: 0.95rem;">Our Experienced Consultants Help With Student Visa Applications To Avoid Refusals and Rejections.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container" style="margin-top: 3rem;">
+    <h2 class="section-title">How We Help You</h2>
+    <div class="grid-layout">
+        <div class="card" style="text-align: center;">
+            <h5 style="color: var(--accent);">International Student Counseling</h5>
+            <img class="service-img" src="img/service-1-300×300(Mobile).webp" alt="Counseling">
+            <p style="font-size: 0.9rem;">Certified consultants providing one-on-one guidance to help you make confident decisions about studying in the UK.</p>
+            <a class="cta-btn" style="margin-top: 1rem;" href="/services/higher-study-budget-planning.php">Read More</a>
+        </div>
+        <div class="card" style="text-align: center;">
+            <h5 style="color: var(--accent);">Scholarship Assistance</h5>
+            <img class="service-img" src="img/service-2-300×300(Mobile).webp" alt="Scholarship">
+            <p style="font-size: 0.9rem;">We help turn your dream into reality through our dedicated Scholarship Assistance service for UK universities.</p>
+            <a class="cta-btn" style="margin-top: 1rem;" href="/services/scholarship-assistance.php">Read More</a>
+        </div>
+        <div class="card" style="text-align: center;">
+            <h5 style="color: var(--accent);">Budget Planning</h5>
+            <img class="service-img" src="img/service-3-300×300(Mobile).webp" alt="Budget">
+            <p style="font-size: 0.9rem;">Planning your higher studies abroad is exciting—but managing the budget can feel overwhelming. We help you plan it.</p>
+            <a class="cta-btn" style="margin-top: 1rem;" href="/services/higher-study-budget-planning.php">Read More</a>
+        </div>
+    </div>
+</section>
+
+<section class="container" style="margin-top: 4rem;">
+    <div class="card" style="background: var(--primary); color: #fff; text-align: center; padding: 3rem 1.5rem;">
+        <h2>Want to be a UK Student?</h2>
+        <p style="color: #ddd; margin-bottom: 2rem;">Get expert guidance from course selection to visa support.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+            <input type="email" placeholder="Your email" style="padding: 0.8rem 1.5rem; border-radius: 50px; border: none; width: min(100%, 300px);">
+            <button class="cta-btn">SignUp</button>
+        </div>
+    </div>
+</section>
+
+
+<section class="container" style="margin-top: 3rem;">
+    <div class="card">
+        <h2 class="section-title">Our Recent Posts</h2>
+        <div class="blog-grid">
+            <?php
+            $blogs = [
+                ["title" => "Higher Education the Right Path for You? Find Out!",    "link"  => "/Blogs/Higher_Education_the_Right_Path_for_You__Find_Out_.php",   "img"   => "1"            ],
+                ["title" => "Choose the Right Country for Your Higher Studies",      "link"  => "/Blogs/Choose_the_Right_Country_for_Your_Higher_Studies.php",     "img"   => "2"            ],
+                ["title" => "How to get a Job While Studying abroad",                "link"  => "/Blogs/How_to_get_a_Job_While_Studying_abroad.php",               "img"   => "3"            ],
+                ["title" => "Prepare for Studying Abroad in Advance",                "link"  => "/Blogs/Prepare_for_Studying_Abroad_in_Advance.php",               "img"   => "4"            ],
+                ["title" => "UK Student Visa Updated Rules and Requirements 2026",   "link"  => "/Blogs/UK_Student_Visa_Updated_Rules_and_Requirements_2026.php",  "img"   => "5"            ],
+                ["title" => "Why You Should Study Abroad in 2026",	       	         "link"  => "/Blogs/Why_You_Should_Study_Abroad_in_2026.php",                  "img"   => "6"            ]
+            ];
+
+            foreach ($blogs as $blog): ?>
+            <div class="blog-item card">
+                <img src="img/blog-<?php echo $blog['img']; ?>-360×240(Mobile).webp" alt="Blog" style="width: 100%; border-radius: 10px;">
+                <a href="<?php echo $blog['link']; ?>" style="display: block; margin-top: 1rem; font-weight: 600; text-decoration: none; color: var(--primary);">
+                    <?php echo $blog['title']; ?>
+                </a>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    
+    
+        
+    </section>
+
+<section class="container" style="margin-top: 4rem;">
+    <h2 class="section-title">Student Reviews</h2>
+    <div class="card review-form-card">
+        <h3>Leave a Review</h3>
+        <p>Log in with Google to auto-fill your details and share your experience.</p>
+        
+        <div id="g_id_onload" 
+             data-client_id="160791480238-e61l8viqge00hfdeee1gp1mfhmpe0h84.apps.googleusercontent.com" 
+             data-callback="handleGoogleLogin" 
+             data-auto_prompt="false"> 
+        </div>
+        <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline" data-text="signin_with" data-size="large"></div>
+        
+        <form id="reviewForm" class="review-form" style="margin-top: 2rem;">
+            <input type="hidden" name="google_sub" id="google_sub">
+            <input type="hidden" name="picture" id="picture">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" name="name" readonly placeholder="Your Full Name" class="form-control rounded-pill">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" name="email" readonly placeholder="Your Official email" class="form-control rounded-pill">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>WhatsApp Number</label>
+                <input type="tel" name="whatsapp" class="form-control rounded-pill" required placeholder="e.g. +447446969466">
+            </div>
+
+            <div class="form-group">
+                <label>Service Used</label>
+                <select name="service_used" class="form-control rounded-pill" required>
+                    <option value="">Select service</option>
+                    <option>End-to-End UK Admission & Relocation Service</option>
+                    <option>UK Admission Support Services</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Rating</label>
+                <select name="rating" class="form-control rounded-pill" required>
+                    <option value="">Select Rating</option>
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="1">★☆☆☆☆</option>
+                </select>
+            </div>
+
+            <textarea name="review" placeholder="Your Review" required style="width: 100%; border-radius: 1rem; padding: 1rem; margin-top: 1rem; border: 1px solid #ddd;"></textarea>
+            
+            <button type="submit" class="cta-btn" style="width: 100%; margin-top: 1rem;">Submit Review</button>
+        </form>
+        <p id="reviewMessage" class="review-message"></p>
+    </div>
+
+    <div class="reviews-list" id="reviewsList"></div>
+</section>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script>
+function parseJwt(token) {
+    try {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        return JSON.parse(decodeURIComponent(atob(base64).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join('')));
+    } catch (e) { return null; }
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+async function handleGoogleLogin(response) {
+    const user = parseJwt(response.credential);
+    if (user) {
+        document.getElementById('google_sub').value = user.sub;
+        document.getElementById('name').value = user.name;
+        document.getElementById('email').value = user.email;
+        document.getElementById('picture').value = user.picture || '';
+        // login successful message
+        document.getElementById('reviewMessage').innerHTML = '<span style="color:green; font-weight:bold;">Success! Details auto-filled from Google.</span>';
+    }
 }
 
-body {
-  background-color: var(--bg);
-  color: var(--primary);
-  line-height: 1.6;
-  overflow-x: hidden;
-  font-size: 16px;
-}
+document.getElementById('reviewForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Check: Is the user logged in or not
+    const googleSub = document.getElementById('google_sub').value;
+    if (!googleSub) {
+        alert('Please login with Google first to submit your review.');
+        return;
+    }
 
-/* Container */
-.container {
-  max-width: var(--maxWidth);
-  margin: 0 auto;
-  padding: 0 clamp(1rem, 5vw, 2.5rem);
-}
+    const formData = new FormData(this);
+    try {
+        const res = await fetch('/api/submit-review.php', {
+            method: 'POST',
+            body: JSON.stringify(Object.fromEntries(formData.entries())),
+            headers: { 'Content-Type': 'application/json' }
+        });
+        const data = await res.json();
+        if (data.success) { 
+            alert('Review submitted for approval!'); 
+            this.reset(); 
+            document.getElementById('reviewMessage').innerHTML = '';
+        } else {
+            alert('Error: ' + (data.message || 'Submission failed'));
+        }
+    } catch (error) {
+        alert('Submission error. Please try again.');
+    }
+});
+</script>
+<script>
+    // Slideshow Logic
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".hero-slideshow picture");
+    function showSlides() {
+        slides.forEach(s => s.classList.remove("active"));
+        slideIndex = (slideIndex + 1) % slides.length;
+        slides[slideIndex].classList.add("active");
+        setTimeout(showSlides, 4000);
+    }
+    showSlides();
 
-/* Headings */
-h1, h2, h3, h4, h5, h6, .section-title { 
-  text-align: center; 
-  margin-bottom: 1rem; 
-}
-h1 { font-size: clamp(2rem, 5vw + 1rem, 3rem); line-height: 1.2; }
-p { font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); color: var(--muted); }
+        // ... (Your existing JWT parsing logic)
+        document.getElementById('reviewForm').style.display = 'block';
+    }
+</script>
 
-/* ================= HEADER ================= */
-h1, h2, h3, h4, h5, h6, .section-title { 
-    text-align: center; 
-    margin-bottom: 1rem; 
-}
-h1 { font-size: clamp(2rem, 5vw + 1rem, 3rem); line-height: 1.2; }
-p { font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); color: var(--muted); }
-
-/* Header & Navigation */
-header {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
-  padding: 0.5rem 0; /* প্যাডিং একটু কমিয়ে বা বাড়িয়ে এডজাস্ট করতে পারেন */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  
-  /* হাইট ঠিক রাখার জন্য নিচের ৩টি লাইন যোগ করুন */
-  min-height: 80px;      /* আপনার আগের উচ্চতা অনুযায়ী এটি ৮০ বা ৯০ পিক্সেল দিতে পারেন */
-  display: flex;
-  align-items: center;  /* কন্টেন্টগুলো লম্বালম্বিভাবে মাঝখানে থাকবে */
-}
-
-.header-content {
-  width: 100%; /* কন্টেন্ট পুরোটা ছড়িয়ে থাকবে */
-  max-width: var(--maxWidth);
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1.5rem;
-}
-.logo img { height: 45px; width: auto; transition: 0.3s; }
-
-nav ul { 
-    display: flex; 
-    gap: 1.5rem; 
-    list-style: none; 
-    align-items: center; 
-}
-nav ul li a {
-    text-decoration: none;
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 1.2rem;
-    transition: 0.3s;
-}
-nav ul li a:hover { color: var(--accent); }
-
-.menu-close-btn { 
-    display: none; 
-    font-size: 2.5rem; 
-    color: var(--primary); 
-    cursor: pointer; 
-    padding: 0.5rem; 
-}
-.hamburger { 
-    display: none; 
-    cursor: pointer; 
-    flex-direction: column; 
-    gap: 5px; 
-}
-.bar { 
-    width: 250px; 
-    height: 3px; 
-    background: var(--primary); 
-    border-radius: 2px; 
-    transition: 0.4s; 
-}
-
-/* Hero & Common Components */
-.hero {
-  background: linear-gradient(90deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.02));
-  border-radius: var(--radius);
-  padding: clamp(2rem, 5vw, 4rem);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: center;
-  animation: fadeIn 1s ease-in;
-}
-
-.cta-btn {
-  background: var(--accent);
-  color: #fff !important;
-  padding: 0.75rem 1.75rem;
-  border-radius: 99px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-  min-width: 48px;
-  min-height: 48px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.9rem;
-}
-.cta-btn:hover { 
-    transform: translateY(-2px); 
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); 
-    opacity: 0.9; 
-}
-
-.card {
-  background: var(--card);
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  border-radius: var(--radius);
-  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.03);
-}
-.card:hover { transform: translateY(-5px); }
-
-/* Sections & Grids */
-.about-section, .service-section, .blogs-section, .reviews-section {
-    padding: var(--section-gap) 0;
-}
-.blog-grid, .service-grid, .testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.blog-item img, .about-image img {
-    width: 100%;
-    height: auto;
-    border-radius: var(--radius);
-    transition: 0.3s;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  margin-top: 4rem;
-  padding: 3rem 0 1.5rem;
-  background: linear-gradient(to top, #f8fafc, #ffffff);
-  border-top: 1px solid rgba(0,0,0,0.05);
-}
-
-.footer-content {
-  max-width: var(--maxWidth);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 2rem;
-}
-
-.footer-info p {
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-/* Social */
-.social {
-  display: flex;
-  gap: 1rem;
-}
-
-.social a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-
-.social a:hover {
-  transform: translateY(-5px) scale(1.1);
-  background: var(--accent);
-}
-
-.social a img {
-  width: 22px;
-  height: 22px;
-}
-
-/* Responsive Sidebar */
-@media (max-width: 1024px) {
-  .hamburger { display: flex; }
-  .d-none-mobile { display: none; }
-  nav ul {
-    position: fixed;
-    top: 0; right: -100%;
-    height: 100vh;
-    width: min(320px, 85%);
-    background: var(--card);
-    flex-direction: column;
-    padding: 2rem;
-    gap: 1.5rem;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    align-items: flex-start;
-    z-index: 1001;
-  }
-  nav ul.active { right: 0; }
-  .menu-close-btn { display: block; align-self: flex-end; margin-bottom: 1rem; }
-}
-
-/* Forms */
-.review-form input, .review-form select, .review-form textarea {
-  width: 100%; padding: 12px 20px; border-radius: 50px; border: 1px solid #E5E7EB; 
-  margin-bottom: 1rem; outline: none; transition: 0.3s;
-}
-.review-form textarea { border-radius: 1.5rem; min-height: 120px; }
-.review-form input:focus, .review-form select:focus, .review-form textarea:focus { 
-  border-color: var(--accent); 
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.1); 
-}
-
-/* Prevent iOS zoom issue */
-input, select, textarea {
-  font-size: 16px;
-}
-
-/* Floating Elements */
-#backToTop { 
-    position: fixed; bottom: 20px; right: 20px; 
-    background: var(--accent); color: #fff; 
-    width: 45px; height: 45px; border-radius: 50%; 
-    cursor: pointer; display: none; border: none; z-index: 99; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
-}
-.sticky-whatsapp { 
-    position: fixed; right: 20px; bottom: 85px; 
-    background: #faf7f7; color: white; padding: 12px; 
-    border-radius: 50px; display: flex; align-items: center; 
-    z-index: 999; box-shadow: 0 8px 24px rgba(0,0,0,0.15); 
-    animation: pulse 2s infinite; text-decoration: none; 
-}
-
-/* Animations */
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-@keyframes scrollBg { from { background-position: 0 0; } to { background-position: -1400px 0; } }
-@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+<?php include 'includes/footer.php'; ?>
