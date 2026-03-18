@@ -13,14 +13,20 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
-    background-color: var(--bg);
-    color: var(--primary);
-    line-height: 1.6;
-    overflow-x: hidden;
-    font-size: 16px;
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
+body {
+  background-color: var(--bg);
+  color: var(--primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+/* Container */
 .container {
   max-width: var(--maxWidth);
   margin: 0 auto;
@@ -28,6 +34,14 @@ body {
 }
 
 /* Headings */
+h1, h2, h3, h4, h5, h6, .section-title { 
+  text-align: center; 
+  margin-bottom: 1rem; 
+}
+h1 { font-size: clamp(2rem, 5vw + 1rem, 3rem); line-height: 1.2; }
+p { font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); color: var(--muted); }
+
+/* ================= HEADER ================= */
 h1, h2, h3, h4, h5, h6, .section-title { 
     text-align: center; 
     margin-bottom: 1rem; 
@@ -39,13 +53,20 @@ p { font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); color: var(--muted); }
 header {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
-  padding: 0.75rem 0;
+  padding: 0.5rem 0; /* প্যাডিং একটু কমিয়ে বা বাড়িয়ে এডজাস্ট করতে পারেন */
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  
+  /* হাইট ঠিক রাখার জন্য নিচের ৩টি লাইন যোগ করুন */
+  min-height: 80px;      /* আপনার আগের উচ্চতা অনুযায়ী এটি ৮০ বা ৯০ পিক্সেল দিতে পারেন */
+  display: flex;
+  align-items: center;  /* কন্টেন্টগুলো লম্বালম্বিভাবে মাঝখানে থাকবে */
 }
+
 .header-content {
+  width: 100%; /* কন্টেন্ট পুরোটা ছড়িয়ে থাকবে */
   max-width: var(--maxWidth);
   margin: 0 auto;
   display: flex;
@@ -65,7 +86,7 @@ nav ul li a {
     text-decoration: none;
     color: var(--primary);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     transition: 0.3s;
 }
 nav ul li a:hover { color: var(--accent); }
@@ -84,7 +105,7 @@ nav ul li a:hover { color: var(--accent); }
     gap: 5px; 
 }
 .bar { 
-    width: 25px; 
+    width: 250px; 
     height: 3px; 
     background: var(--primary); 
     border-radius: 2px; 
@@ -155,25 +176,55 @@ nav ul li a:hover { color: var(--accent); }
     transition: 0.3s;
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 footer {
   margin-top: 4rem;
   padding: 3rem 0 1.5rem;
-  background: #fff url('https://studentadmission.uk/img/footer-bg.png') repeat-x;
-  background-size: cover;
-  }
-.footer-content {
-    max-width: var(--maxWidth);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
+  background: linear-gradient(to top, #f8fafc, #ffffff);
+  border-top: 1px solid rgba(0,0,0,0.05);
 }
-.social { display: flex; gap: 1rem; font-size: 1.5rem; }
-.social a { color: var(--primary); transition: 0.3s; text-decoration: none; }
-.social a:hover { color: var(--accent); transform: scale(1.1); }
+
+.footer-content {
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 2rem;
+}
+
+.footer-info p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Social */
+.social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.social a:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: var(--accent);
+}
+
+.social a img {
+  width: 22px;
+  height: 22px;
+}
 
 /* Responsive Sidebar */
 @media (max-width: 1024px) {
@@ -206,6 +257,11 @@ footer {
 .review-form input:focus, .review-form select:focus, .review-form textarea:focus { 
   border-color: var(--accent); 
   box-shadow: 0 0 0 3px rgba(37,99,235,0.1); 
+}
+
+/* Prevent iOS zoom issue */
+input, select, textarea {
+  font-size: 16px;
 }
 
 /* Floating Elements */
