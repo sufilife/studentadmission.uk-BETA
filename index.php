@@ -86,6 +86,7 @@
     </div>
 </div>
 
+<!-- About Start-->
 <section class="container">
     <div class="card">
         <h2 class="section-title">Why Choose Us</h2>
@@ -109,7 +110,9 @@
         </div>
     </div>
 </section>
+<!-- About End-->
 
+<!-- Service Start-->
 <section class="container" style="margin-top: 3rem;">
     <h2 class="section-title">How We Help You</h2>
     <div class="grid-layout">
@@ -131,9 +134,18 @@
             <p style="font-size: 0.9rem;">Planning your higher studies abroad is exciting—but managing the budget can feel overwhelming. We help you plan it.</p>
             <a class="cta-btn" style="margin-top: 1rem;" href="/services/higher-study-budget-planning.php">Read More</a>
         </div>
+        <div class="card" style="text-align: center;">
+            <h5 style="color: var(--accent);">University Interview Preparation</h5>
+            <img class="service-img" src="img/service-4(100×100).webp" alt="Scholarship">
+            <p style="font-size: 0.9rem;">Mock interviews, statement review, and interview question bank by ex-university admission officers. 95%+ success rate.</p>
+            <a class="cta-btn" style="margin-top: 1rem;" href="/services/university-interview-preparation.php">Read More</a>
+        </div>
     </div>
 </section>
+<!-- Service End-->
 
+
+<!-- Banner Start-->
 <section class="container" style="margin-top: 4rem;">
     <div class="card" style="background: var(--primary); color: #fff; text-align: center; padding: 3rem 1.5rem;">
         <h2>Want to be a UK Student?</h2>
@@ -144,8 +156,9 @@
         </div>
     </div>
 </section>
+<!-- Banner End-->
 
-
+<!-- Blogs Start-->
 <section class="container" style="margin-top: 3rem;">
     <div class="card">
         <h2 class="section-title">Our Recent Posts</h2>
@@ -157,8 +170,7 @@
                 ["title" => "How to get a Job While Studying abroad",                "link"  => "/Blogs/How_to_get_a_Job_While_Studying_abroad.php",               "img"   => "3"            ],
                 ["title" => "Prepare for Studying Abroad in Advance",                "link"  => "/Blogs/Prepare_for_Studying_Abroad_in_Advance.php",               "img"   => "4"            ],
                 ["title" => "UK Student Visa Updated Rules and Requirements 2026",   "link"  => "/Blogs/UK_Student_Visa_Updated_Rules_and_Requirements_2026.php",  "img"   => "5"            ],
-                ["title" => "Why You Should Study Abroad in 2026",	       	         "link"  => "/Blogs/Why_You_Should_Study_Abroad_in_2026.php",                  "img"   => "6"            ],
-                ["title" => "You need a Financial Plan for your Academic Year",      "link"  => "/Blogs/You_need_a_Financial_Plan_for_your_Academic_Year.php",     "img"   => "7"            ]
+                ["title" => "Why You Should Study Abroad in 2026",	       	         "link"  => "/Blogs/Why_You_Should_Study_Abroad_in_2026.php",                  "img"   => "6"            ]
             ];
 
             foreach ($blogs as $blog): ?>
@@ -171,11 +183,11 @@
             <?php endforeach; ?>
         </div>
     </div>
-    
-    
-        
-    </section>
+</section>
+<!-- Blogs End-->
 
+
+<!-- Review  Start-->
 <section class="container" style="margin-top: 4rem;">
     <h2 class="section-title">Student Reviews</h2>
     <div class="card review-form-card">
@@ -239,6 +251,8 @@
 
     <div class="reviews-list" id="reviewsList"></div>
 </section>
+<!-- Review  End-->
+
 
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script>
@@ -257,7 +271,7 @@ async function handleGoogleLogin(response) {
         document.getElementById('name').value = user.name;
         document.getElementById('email').value = user.email;
         document.getElementById('picture').value = user.picture || '';
-        // লগইন সফল হলে মেসেজ দেখাবে
+        // login successful message
         document.getElementById('reviewMessage').innerHTML = '<span style="color:green; font-weight:bold;">Success! Details auto-filled from Google.</span>';
     }
 }
@@ -265,7 +279,7 @@ async function handleGoogleLogin(response) {
 document.getElementById('reviewForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
-    // চেক: ইউজার লগইন করেছে কি না
+    // Check: Is the user logged in or not
     const googleSub = document.getElementById('google_sub').value;
     if (!googleSub) {
         alert('Please login with Google first to submit your review.');
