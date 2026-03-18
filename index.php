@@ -146,7 +146,8 @@
 </section>
 
 
-<section class="blogs-section card" style="margin-top: 3rem;">
+<section class="container" style="margin-top: 3rem;">
+    <div class="card">
         <h2 class="section-title">Our Recent Posts</h2>
         <div class="blog-grid">
             <?php
@@ -156,7 +157,7 @@
                 ["title" => "How to get a Job While Studying abroad",                "link"  => "/Blogs/How_to_get_a_Job_While_Studying_abroad.php",               "img"   => "3"            ],
                 ["title" => "Prepare for Studying Abroad in Advance",                "link"  => "/Blogs/Prepare_for_Studying_Abroad_in_Advance.php",               "img"   => "4"            ],
                 ["title" => "UK Student Visa Updated Rules and Requirements 2026",   "link"  => "/Blogs/UK_Student_Visa_Updated_Rules_and_Requirements_2026.php",  "img"   => "5"            ],
-                ["title" => "Why You Should Study Abroad in 2026",	       	     "link"  => "/Blogs/Why_You_Should_Study_Abroad_in_2026.php",                      "img"   => "6"            ],
+                ["title" => "Why You Should Study Abroad in 2026",	       	         "link"  => "/Blogs/Why_You_Should_Study_Abroad_in_2026.php",                  "img"   => "6"            ],
                 ["title" => "You need a Financial Plan for your Academic Year",      "link"  => "/Blogs/You_need_a_Financial_Plan_for_your_Academic_Year.php",     "img"   => "7"            ]
             ];
 
@@ -169,60 +170,74 @@
             </div>
             <?php endforeach; ?>
         </div>
+    </div>
+    
+    
+        
     </section>
 
 <section class="container" style="margin-top: 4rem;">
     <h2 class="section-title">Student Reviews</h2>
     <div class="card review-form-card">
         <h3>Leave a Review</h3>
-        <p>Log in with Google to share your experience.</p>
-      <!-- Google Login Button -->
-      <div id="g_id_onload" data-client_id="160791480238-e61l8viqge00hfdeee1gp1mfhmpe0h84.apps.googleusercontent.com"  data-callback="handleGoogleLogin"   data-auto_prompt="false"> </div>
-      <div class="g_id_signin" data-type="standard"  data-shape="pill"   data-theme="outline"   data-text="signin_with"     data-size="large">    </div>
+        <p>Log in with Google to auto-fill your details and share your experience.</p>
         
-        <form id="reviewForm" class="review-form" style="display:none; margin-top: 2rem;">
+        <div id="g_id_onload" 
+             data-client_id="160791480238-e61l8viqge00hfdeee1gp1mfhmpe0h84.apps.googleusercontent.com" 
+             data-callback="handleGoogleLogin" 
+             data-auto_prompt="false"> 
+        </div>
+        <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline" data-text="signin_with" data-size="large"></div>
+        
+        <form id="reviewForm" class="review-form" style="margin-top: 2rem;">
             <input type="hidden" name="google_sub" id="google_sub">
             <input type="hidden" name="picture" id="picture">
+            
             <div class="form-row">
                 <div class="form-group">
                     <label>Full Name</label>
-                    <input type="text" id="name" name="name" readonly class="form-control rounded-pill">
+                    <input type="text" id="name" name="name" readonly placeholder="Your Full Name" class="form-control rounded-pill">
                 </div>
                 <div class="form-group">
-            <label>Email</label>
-            <input type="email" id="email" name="email" readonly class="form-control rounded-pill">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>WhatsApp Number</label>
-          <input type="tel" name="whatsapp" class="form-control rounded-pill" required>
-        </div>
-        <div class="form-group">
-          <label>Service Used</label>
-          <select name="service_used" class="form-control rounded-pill" required>
-            <option value="">Select service</option>
-            <option>End-to-End UK Admission & Relocation Service</option>
-            <option>UK Admission Support Services</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Rating</label>
-          <select name="rating" class="form-control rounded-pill" required>
-            <option value="">Select Rating</option>
-            <option value="5">★★★★★</option>
-            <option value="4">★★★★☆</option>
-            <option value="3">★★★☆☆</option>
-            <option value="2">★★☆☆☆</option>
-            <option value="1">★☆☆☆☆</option>
-          </select>
-            <textarea name="review" placeholder="Your Review" required style="width: 100%; border-radius: 1rem; padding: 1rem;"></textarea>
+                    <label>Email</label>
+                    <input type="email" id="email" name="email" readonly placeholder="Your Official email" class="form-control rounded-pill">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>WhatsApp Number</label>
+                <input type="tel" name="whatsapp" class="form-control rounded-pill" required placeholder="e.g. +447446969466">
+            </div>
+
+            <div class="form-group">
+                <label>Service Used</label>
+                <select name="service_used" class="form-control rounded-pill" required>
+                    <option value="">Select service</option>
+                    <option>End-to-End UK Admission & Relocation Service</option>
+                    <option>UK Admission Support Services</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Rating</label>
+                <select name="rating" class="form-control rounded-pill" required>
+                    <option value="">Select Rating</option>
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="1">★☆☆☆☆</option>
+                </select>
+            </div>
+
+            <textarea name="review" placeholder="Your Review" required style="width: 100%; border-radius: 1rem; padding: 1rem; margin-top: 1rem; border: 1px solid #ddd;"></textarea>
+            
             <button type="submit" class="cta-btn" style="width: 100%; margin-top: 1rem;">Submit Review</button>
         </form>
-      <p id="reviewMessage" class="review-message"></p>
+        <p id="reviewMessage" class="review-message"></p>
     </div>
-    <!-- Approved Reviews List -->
-    <div class="reviews-list" id="reviewsList">
-    </div>
+
+    <div class="reviews-list" id="reviewsList"></div>
 </section>
 
 <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -234,6 +249,7 @@ function parseJwt(token) {
         return JSON.parse(decodeURIComponent(atob(base64).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join('')));
     } catch (e) { return null; }
 }
+
 async function handleGoogleLogin(response) {
     const user = parseJwt(response.credential);
     if (user) {
@@ -241,20 +257,39 @@ async function handleGoogleLogin(response) {
         document.getElementById('name').value = user.name;
         document.getElementById('email').value = user.email;
         document.getElementById('picture').value = user.picture || '';
-        document.getElementById('reviewForm').style.display = 'block';
-        document.getElementById('reviewMessage').innerHTML = '<span style="color:green">Logged in! You can now review.</span>';
+        // লগইন সফল হলে মেসেজ দেখাবে
+        document.getElementById('reviewMessage').innerHTML = '<span style="color:green; font-weight:bold;">Success! Details auto-filled from Google.</span>';
     }
 }
+
 document.getElementById('reviewForm').addEventListener('submit', async function(e) {
     e.preventDefault();
+    
+    // চেক: ইউজার লগইন করেছে কি না
+    const googleSub = document.getElementById('google_sub').value;
+    if (!googleSub) {
+        alert('Please login with Google first to submit your review.');
+        return;
+    }
+
     const formData = new FormData(this);
-    const res = await fetch('/api/submit-review.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(formData.entries()))
-    });
-    const data = await res.json();
-    if (data.success) { alert('Review submitted!'); this.reset(); }
+    try {
+        const res = await fetch('/api/submit-review.php', {
+            method: 'POST',
+            body: JSON.stringify(Object.fromEntries(formData.entries())),
+            headers: { 'Content-Type': 'application/json' }
+        });
+        const data = await res.json();
+        if (data.success) { 
+            alert('Review submitted for approval!'); 
+            this.reset(); 
+            document.getElementById('reviewMessage').innerHTML = '';
+        } else {
+            alert('Error: ' + (data.message || 'Submission failed'));
+        }
+    } catch (error) {
+        alert('Submission error. Please try again.');
+    }
 });
 </script>
 <script>
