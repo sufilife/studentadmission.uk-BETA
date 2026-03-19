@@ -53,6 +53,57 @@
             margin: 1rem auto;
             border: 4px solid var(--bg);
         }
+    /* স্লাইডার কন্টেইনার */
+.scroll-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 1rem 0.5rem 2rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* স্ক্রলবার লুকানোর জন্য (Blog & Service এর জন্য) */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Scroll Snap (About Section এর জন্য) */
+.snap-scroll {
+    scroll-snap-type: x mandatory;
+}
+.snap-item {
+    scroll-snap-align: start;
+    flex: 0 0 300px; /* প্রতিটি কার্ডের ফিক্সড প্রস্থ */
+    min-width: 300px;
+}
+
+/* মোবাইলের জন্য কার্ডের সাইজ একটু ছোট করা */
+@media (max-width: 768px) {
+    .snap-item {
+        flex: 0 0 85%;
+        min-width: 85%;
+    }
+}
+
+/* Arrow Buttons এর স্টাইল */
+.slider-container { position: relative; }
+.nav-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: var(--accent); color: white; border: none;
+    width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+    z-index: 10; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.prev-btn { left: -10px; }
+.next-btn { right: -10px; }
+
+@media (max-width: 1024px) { .nav-btn { display: none; } } /* মোবাইলে অ্যারো দরকার নেই */
         
     </style>
 </head>
@@ -90,7 +141,7 @@
 <section class="container">
     <div class="card">
         <h2 class="section-title">Why Choose Us</h2>
-        <div class="grid-layout">
+        <div class="scroll-wrapper snap-scroll no-scrollbar">
             <?php
             // Why Choose Us এর জন্য ডাইনামিক অ্যারে
             $features = [
@@ -114,9 +165,9 @@
 
             // লুপের মাধ্যমে কার্ডগুলো জেনারেট করা
             foreach ($features as $feature): ?>
-            <div class="card" style="text-align: center; background: rgba(37, 99, 235, 0.03); border: 1px solid rgba(37, 99, 235, 0.1);">
+            <div class="card snap-item" style="text-align: center; background: rgba(37, 99, 235, 0.03);">
                 <h5 style="color: var(--accent); margin-bottom: 10px;"><?php echo $feature['title']; ?></h5>
-                <p style="font-size: 0.95rem; color: var(--muted);"><?php echo $feature['desc']; ?></p>
+                <p style="font-size: 0.95rem;"><?php echo $feature['desc']; ?></p>
             </div>
             <?php endforeach; ?>
         </div>
@@ -127,7 +178,9 @@
 <!-- Service Start-->
 <section class="container" style="margin-top: 3rem;">
     <h2 class="section-title">How We Help You</h2>
-    <div class="grid-layout">
+    <div class="slider-container">
+        <button class="nav-btn prev-btn" onclick="sideScroll('service-slider', 'left')">❮</button>
+        <div class="scroll-wrapper no-scrollbar" id="service-slider">
         <?php
         // ডাইনামিক সার্ভিস অ্যারে
         $services = [
@@ -159,17 +212,15 @@
 
         // লুপের মাধ্যমে সার্ভিসগুলো প্রদর্শন
         foreach ($services as $service): ?>
-        <div class="card" style="text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-                <h5 style="color: var(--accent); min-height: 50px;"><?php echo $service['title']; ?></h5>
-                <img class="service-img" src="img/<?php echo $service['img']; ?>" alt="<?php echo $service['title']; ?>" loading="lazy">
+            <div class="card snap-item" style="text-align: center;">
+                <h5 style="color: var(--accent);"><?php echo $service['title']; ?></h5>
+                <img class="service-img" src="img/<?php echo $service['img']; ?>" alt="Service">
                 <p style="font-size: 0.9rem;"><?php echo $service['desc']; ?></p>
+                <a class="cta-btn" style="margin-top: 1rem;" href="<?php echo $service['link']; ?>">Read More</a>
             </div>
-            <div style="margin-top: 1.5rem;">
-                <a class="cta-btn" href="<?php echo $service['link']; ?>">Read More</a>
-            </div>
+            <?php endforeach; ?>
         </div>
-        <?php endforeach; ?>
+        <button class="nav-btn next-btn" onclick="sideScroll('service-slider', 'right')">❯</button>
     </div>
 </section>
 <!-- Service End-->
@@ -189,10 +240,11 @@
 <!-- Banner End-->
 
 <!-- Blogs Start-->
+
 <section class="container" style="margin-top: 3rem;">
     <div class="card">
         <h2 class="section-title">Our Recent Posts</h2>
-        <div class="blog-grid">
+        <div class="scroll-wrapper no-scrollbar">
             <?php
             $blogs = [
                 ["title" => "Higher Education the Right Path for You? Find Out!",    "link"  => "/Blogs/Higher_Education_the_Right_Path_for_You__Find_Out_.php",   "img"   => "1"            ],
@@ -204,7 +256,7 @@
             ];
 
             foreach ($blogs as $blog): ?>
-            <div class="blog-item card">
+            <div class="blog-item card snap-item" style="min-width: 320px;">
                 <img src="img/blog-<?php echo $blog['img']; ?>-360×240(Mobile).webp" alt="Blog" style="width: 100%; border-radius: 10px;">
                 <a href="<?php echo $blog['link']; ?>" style="display: block; margin-top: 1rem; font-weight: 600; text-decoration: none; color: var(--primary);">
                     <?php echo $blog['title']; ?>
