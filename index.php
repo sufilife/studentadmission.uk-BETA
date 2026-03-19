@@ -9,7 +9,7 @@
         .hero-slideshow {
             position: relative;
             width: 100%;
-            aspect-ratio: 16 / 9; /* মোবাইলে ইমেজ যেন চ্যাপ্টা না হয়ে যায় */
+            aspect-ratio: 16 / 9; /* Don't flatten images on mobile */
             overflow: hidden;
             border-radius: var(--radius);
         }
@@ -53,7 +53,7 @@
             margin: 1rem auto;
             border: 4px solid var(--bg);
         }
-    /* স্লাইডার কন্টেইনার */
+    /* Slider container */
 .scroll-wrapper {
     display: flex;
     flex-wrap: nowrap;
@@ -64,7 +64,7 @@
     -webkit-overflow-scrolling: touch;
 }
 
-/* স্ক্রলবার লুকানোর জন্য (Blog & Service এর জন্য) */
+/* To hide the scrollbar (for Blog & Service) */
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
@@ -73,17 +73,18 @@
     scrollbar-width: none;
 }
 
-/* Scroll Snap (About Section এর জন্য) */
+/* Scroll Snap (About Section ) */
 .snap-scroll {
     scroll-snap-type: x mandatory;
 }
 .snap-item {
     scroll-snap-align: start;
-    flex: 0 0 300px; /* প্রতিটি কার্ডের ফিক্সড প্রস্থ */
+    flex: 0 0 300px; /* Fixed width of each card */
     min-width: 300px;
 }
 
-/* মোবাইলের জন্য কার্ডের সাইজ একটু ছোট করা */
+
+/* Make the card size a little smaller for mobile */
 @media (max-width: 768px) {
     .snap-item {
         flex: 0 0 85%;
@@ -103,7 +104,7 @@
 .prev-btn { left: -10px; }
 .next-btn { right: -10px; }
 
-@media (max-width: 1024px) { .nav-btn { display: none; } } /* মোবাইলে অ্যারো দরকার নেই */
+@media (max-width: 1024px) { .nav-btn { display: none; } } /* No need for arrows on mobile */
         
     </style>
 </head>
@@ -143,7 +144,6 @@
         <h2 class="section-title">Why Choose Us</h2>
         <div class="scroll-wrapper snap-scroll no-scrollbar">
             <?php
-            // Why Choose Us এর জন্য ডাইনামিক অ্যারে
             $features = [
                 [
                     "title" => "Free Online Consultation",
@@ -163,7 +163,7 @@
                 ]
             ];
 
-            // লুপের মাধ্যমে কার্ডগুলো জেনারেট করা
+            // Generating cards through a loop
             foreach ($features as $feature): ?>
             <div class="card snap-item" style="text-align: center; background: rgba(37, 99, 235, 0.03);">
                 <h5 style="color: var(--accent); margin-bottom: 10px;"><?php echo $feature['title']; ?></h5>
@@ -182,7 +182,6 @@
         <button class="nav-btn prev-btn" onclick="sideScroll('service-slider', 'left')">❮</button>
         <div class="scroll-wrapper no-scrollbar" id="service-slider">
         <?php
-        // ডাইনামিক সার্ভিস অ্যারে
         $services = [
             [
                 "title" => "International Student Counseling",
