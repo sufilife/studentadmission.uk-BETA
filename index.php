@@ -189,37 +189,25 @@
 <!-- Banner End-->
 
 <!-- Blogs Start-->
-<section class="container" style="margin-top: 3rem; margin-bottom: 5rem;">
+<section class="container" style="margin-top: 3rem;">
     <div class="card">
         <h2 class="section-title">Our Recent Posts</h2>
-        <div class="grid-layout">
+        <div class="blog-grid">
             <?php
-            // ব্লগের জন্য ডাইনামিক অ্যারে
             $blogs = [
-                ["title" => "Higher Education the Right Path for You? Find Out!", "link" => "/Blogs/Higher_Education_the_Right_Path_for_You__Find_Out_.php", "img" => "blog-1-360×240(Mobile).webp"],
-                ["title" => "Choose the Right Country for Your Higher Studies", "link" => "/Blogs/Choose_the_Right_Country_for_Your_Higher_Studies.php", "img" => "blog-2-360×240(Mobile).webp"],
-                ["title" => "How to get a Job While Studying abroad", "link" => "/Blogs/How_to_get_a_Job_While_Studying_abroad.php", "img" => "blog-3-360×240(Mobile).webp"],
-                ["title" => "Prepare for Studying Abroad in Advance", "link" => "/Blogs/Prepare_for_Studying_Abroad_in_Advance.php", "img" => "blog-4-360×240(Mobile).webp"],
-                ["title" => "UK Student Visa Updated Rules and Requirements 2026", "link" => "/Blogs/UK_Student_Visa_Updated_Rules_and_Requirements_2026.php", "img" => "blog-5-360×240(Mobile).webp"],
-                ["title" => "Why You Should Study Abroad in 2026", "link" => "/Blogs/Why_You_Should_Study_Abroad_in_2026.php", "img" => "blog-6-360×240(Mobile).webp"]
+                ["title" => "Higher Education the Right Path for You? Find Out!",    "link"  => "/Blogs/Higher_Education_the_Right_Path_for_You__Find_Out_.php",   "img"   => "1"            ],
+                ["title" => "Choose the Right Country for Your Higher Studies",      "link"  => "/Blogs/Choose_the_Right_Country_for_Your_Higher_Studies.php",     "img"   => "2"            ],
+                ["title" => "How to get a Job While Studying abroad",                "link"  => "/Blogs/How_to_get_a_Job_While_Studying_abroad.php",               "img"   => "3"            ],
+                ["title" => "Prepare for Studying Abroad in Advance",                "link"  => "/Blogs/Prepare_for_Studying_Abroad_in_Advance.php",               "img"   => "4"            ],
+                ["title" => "UK Student Visa Updated Rules and Requirements 2026",   "link"  => "/Blogs/UK_Student_Visa_Updated_Rules_and_Requirements_2026.php",  "img"   => "5"            ],
+                ["title" => "Why You Should Study Abroad in 2026",	       	         "link"  => "/Blogs/Why_You_Should_Study_Abroad_in_2026.php",                  "img"   => "6"            ]
             ];
 
-            // লুপের মাধ্যমে ব্লগ পোস্টগুলো প্রদর্শন
             foreach ($blogs as $blog): ?>
-            <div class="blog-item card" style="padding: 1rem; border: 1px solid rgba(0,0,0,0.05);">
-                <a href="<?php echo $blog['link']; ?>" style="text-decoration: none;">
-                    <div style="overflow: hidden; border-radius: 10px;">
-                        <img src="img/<?php echo $blog['img']; ?>" alt="Blog Image" 
-                             style="width: 100%; height: 200px; object-fit: cover; transition: 0.3s; display: block;" 
-                             onmouseover="this.style.transform='scale(1.05)'" 
-                             onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                    
-                    <div style="margin-top: 1.2rem;">
-                        <h5 style="color: var(--primary); font-weight: 600; font-size: 1.1rem; line-height: 1.4; text-align: left; transition: 0.3s;">
-                            <?php echo $blog['title']; ?>
-                        </h5>
-                    </div>
+            <div class="blog-item card">
+                <img src="img/blog-<?php echo $blog['img']; ?>-360×240(Mobile).webp" alt="Blog" style="width: 100%; border-radius: 10px;">
+                <a href="<?php echo $blog['link']; ?>" style="display: block; margin-top: 1rem; font-weight: 600; text-decoration: none; color: var(--primary);">
+                    <?php echo $blog['title']; ?>
                 </a>
             </div>
             <?php endforeach; ?>
