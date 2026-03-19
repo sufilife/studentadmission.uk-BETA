@@ -376,7 +376,7 @@ document.getElementById('reviewForm').addEventListener('submit', async function(
         });
         const data = await res.json();
         if (data.success) { 
-            alert('Review submitted for approval!'); 
+            alert('Thank You! Your review has been submitted.'); 
             this.reset(); 
             document.getElementById('reviewMessage').innerHTML = '';
         } else {
