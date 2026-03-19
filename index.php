@@ -348,21 +348,25 @@ document.getElementById('reviewForm').addEventListener('submit', async function(
     }
 });
 </script>
+
 <script>
-    // Slideshow Logic
     let slideIndex = 0;
     const slides = document.querySelectorAll(".hero-slideshow picture");
     function showSlides() {
         slides.forEach(s => s.classList.remove("active"));
         slideIndex = (slideIndex + 1) % slides.length;
-        slides[slideIndex].classList.add("active");
+        if(slides[slideIndex]) slides[slideIndex].classList.add("active");
         setTimeout(showSlides, 4000);
     }
     showSlides();
-
-        // ... (Your existing JWT parsing logic)
-        document.getElementById('reviewForm').style.display = 'block';
-    }
+</script>
+<script>
+{
+    // ... (Your existing JWT parsing logic)
+    document.getElementById('reviewForm').style.display = 'block';
+    
+    
+}
 </script>
 
 <?php include 'includes/footer.php'; ?>
